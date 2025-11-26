@@ -1,0 +1,46 @@
+/* Подключение шрифта TT Neoris Trial */
+/* TODO: Добавить шрифтовые файлы в проект */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Подключение Tailwind CSS */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Глобальные стили */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    @apply box-border;
+    border-style: none;
+    border-color: transparent;
+  }
+
+  html {
+    @apply antialiased;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply m-0 p-0 font-sans text-p2 text-white-100 bg-black-90;
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  #app {
+    @apply min-h-screen;
+  }
+}
+
+/* Кастомные утилиты */
+@layer utilities {
+  .content-stretch {
+    align-content: stretch;
+  }
+
+  .content-start {
+    align-content: flex-start;
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "name": "goevo25",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format": "prettier --write \"src/**/*.{js,vue,html,css,json}\"",
+    "format:check": "prettier --check \"src/**/*.{js,vue,html,css,json}\""
+  },
+  "dependencies": {
+    "@vueuse/core": "^14.0.0",
+    "gsap": "^3.13.0",
+    "pinia": "^3.0.4",
+    "vue": "^3.5.24",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.1",
+    "postcss": "^8.5.6",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1",
+    "vite": "^7.2.2"
+  }
+}

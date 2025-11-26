@@ -1,0 +1,23 @@
+{
+  "name": "Geovo",
+  "short_name": "Geovo",
+  "description": "Your best UX design partner. I’ve helped dozens of top teams increase profits through design",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#161616",
+  "theme_color": "#f6f6f5",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/cover.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

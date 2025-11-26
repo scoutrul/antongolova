@@ -1,0 +1,29 @@
+# Зависимости
+node_modules
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# Сборка
+dist
+build
+.output
+.vite
+
+# Конфигурация
+.env
+.env.*
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+
+# Другое
+coverage
+*.log
+

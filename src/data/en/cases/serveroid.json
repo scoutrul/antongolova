@@ -1,0 +1,113 @@
+{
+  "id": "serveroid",
+  "slug": "serveroid",
+  "hero": {
+    "title": "Serveroid: how we turned an internal tool into a commercial IaaS product",
+    "stats": [
+      {
+        "value": "+12%",
+        "description": "to income"
+      },
+      { "value": "+28%", "description": "conversion to purchase" }
+    ]
+  },
+  "meta": {
+    "items": [
+      { "value": "AdGuard", "label": "partner" },
+      { "value": "Cyprus", "label": "location" },
+      { "value": "Lead Product Designer, UX/UI", "label": "roles" },
+      {
+        "value": "Design system, brand, web application",
+        "label": "what I did"
+      },
+      {
+        "value": "React, Figma, Design systems, Autolayouts, Tokens, Variabes, iOS guidelines, Animations, A/B testing, Edge cases",
+        "label": "stack"
+      }
+    ]
+  },
+  "overview": {
+    "title": "Product",
+    "sections": [
+      {
+        "text": "Serveroid is a cloud—based IaaS service for small and medium-sized businesses in Russia. In fact, these are virtual servers that can be rented, configured, and used as infrastructure for products, websites, and projects. But when I joined the team as chief designer, the service lived a double life: formally, it was already a product, but in fact it still remained an internal tool of AdGuard."
+      },
+      {
+        "text": "And if AG1 looked like a grown—up athlete, then Serveroid looked like a talented teenager who could not break out of the old restrictions. In this case, I will tell you how we transformed the product, simplified the complex technical experience, made the interfaces understandable even for beginners, and increased revenue."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text-image",
+            "text": "When I immersed myself in the product, the first feeling was simple: it felt like it was stuck in the past.\n\nOld stack, lots of hardcore, no flexible solutions. Any little thing takes several weeks of development. The interfaces looked like the user needed to first complete an internship at DevOps in order to understand something.\n\nBut the most unpleasant thing happened next.\n\nSome critical things came up during the research:\n\n- server installation is a complex multi—step process where users just got lost\n- the funnel burst in several places, people did not reach the payment\n- server management scenarios were confusing and intimidating to newbies\n- edge cases broke the UX and pushed customers to support\n- the competition in the segment is high, and the product itself did not distinguish itself in any way\n- trust in the service was low — it looked crude and \"technical for techies.\"\n\nWe saw that if we want to turn Serveroid into a commercial product, rather than an internal tool, we need to change everything.",
+            "image": "/assets/videos/case-4-1.mp4",
+            "imageMobile": "/assets/videos/case-4-1-m.mp4"
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "To bring the product to the market, we have divided the work into several large areas:\n\n- Rebranding and updating the website: to make the product modern, visible and competitive. Create a website that can be easily scaled, updated, and used for experimentation.\n- Redesign of the personal account: to cover all key user scenarios, simplify server and subscription management, and close technical cases that users have been racking their brains over.\n- landing system for advertising campaigns: create a modular framework so that marketing can quickly test hypotheses and run dozens of A/B tests per week.\n- A new user experience for installing and managing servers: simplify the most complex piece of the product — installing the server — and turn it into a clear and linear process that brings the user to the purchase."
+          }
+        ]
+      },
+      {
+        "title": "Action",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "We worked as a small but very motivated team. The server infrastructure is not an area where you are forgiven for something. Here, if at least one step is unclear, the user leaves.\n\nI took over the main product areas: the design system, website and landing page updates, personal account and UX architecture of server scenarios."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "New website and visual language",
+            "text": "The website was the first impression of the product, and in the old version it was... frankly, not the best. We completely redesigned it for a new brand, made the structure simpler, cleaner and clearer.\n\nThe main thing is to create a design system for the website:\n\n- flexible components\n- adaptive grid\n- short UX patterns\n- a visual language that inspires trust and competence\n- pages that are easy to expand for new features.\n\nThis gave marketing the freedom to experiment quickly and helped it stand out from competitors of the same type."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Personal account: the heart of the product",
+            "text": "There was real magic going on here—and real chaos.\n\nUsers:\n\n- they got confused in their steps\n- they didn't understand the statuses\n- did you have any idea how to change the configuration or tariff\n- we did not reach the payment.\n\nI rebuilt my personal account almost from scratch."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "We have added",
+            "text": "- trial period\n- flexible server management\n- clear statuses\n- simple subscription logic\n- processing of complex technical edge cases\n- secure actions with servers so that you cannot \"break everything\" with one click.\n\nEach step has been redesigned so that the user feels confident rather than fearful."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Server installation: the sore spot has become the strongest part",
+            "text": "What used to look like a \"technical quest for survivors\", we have turned into a logical, smooth, understandable sequence.\n\nNow:\n\n- the user sees what is happening and why\n- each step is explained in simple language\n- the system tells you if something is going wrong\n- the funnel leads to a purchase, not pushes it away.\n\nThis was one of the most unexpected victories: we thought that the effect would be moderate, but it turned out to be much stronger.",
+            "image": "/assets/videos/case-4-2.mp4",
+            "imageMobile": "/assets/videos/case-4-2-m.mp4"
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "+12% of revenue: due to the improved funnel, ease of management and more trust from users.\n+28% conversion to purchase: the most problematic area — installation and initial setup — has finally become a lead to payment rather than care\nThe visual system and UX have made the product modern and competitive.\nThe team started working faster\nLanding pages were collected in hours, not weeks.\nServeroid has moved from an \"internal tool box\" to a real product for the market\n\nAnd this is perhaps the most important victory."
+          },
+          {
+            "type": "testimonial",
+            "quote": "“This is the first time I've seen such a product launch rate”",
+            "author": "Igor Lukyanov, CEO AdGuard"
+          }
+        ]
+      }
+    ]
+  },
+  "nextCase": {
+    "slug": "ag1",
+    "title": "AG1"
+  }
+}

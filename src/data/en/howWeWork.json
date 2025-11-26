@@ -1,0 +1,45 @@
+{
+  "title": "How we will work",
+  "items": [
+    {
+      "icon": "/assets/icons/howwework/start.svg",
+      "title": "Start",
+      "description": "I'll analyze problems, vision and goals. I'll conduct analysis and create a roadmap"
+    },
+    {
+      "icon": "/assets/icons/howwework/tasks.svg",
+      "title": "Tasks",
+      "description": "I'll create, prioritize and update tasks and statuses in JIRA/Notion/Slack"
+    },
+    {
+      "icon": "/assets/icons/howwework/speed.svg",
+      "title": "Speed",
+      "description": "Much faster than a regular designer. I use AI, hotkeys and automation tools"
+    },
+    {
+      "icon": "/assets/icons/howwework/transfer.svg",
+      "title": "Handoff",
+      "description": "I'll thoroughly work through layouts with edge cases, prepare animations, assets and guides in Figma/Notion"
+    },
+    {
+      "icon": "/assets/icons/howwework/autonomy.svg",
+      "title": "Autonomy",
+      "description": "I independently organize work, hiring and close tasks without distracting team resources"
+    },
+    {
+      "icon": "/assets/icons/howwework/outlook.svg",
+      "title": "Vision",
+      "description": "I'll launch entire products both as the sole designer-visionary and as part of complex teams"
+    },
+    {
+      "icon": "/assets/icons/howwework/system.svg",
+      "title": "Systematic approach",
+      "description": "I'll provide solutions from icons and graphics to design systems and products ready for development"
+    },
+    {
+      "icon": "/assets/icons/howwework/support.svg",
+      "title": "Support",
+      "description": "I'll thoroughly control development and bring it to perfect result"
+    }
+  ]
+}

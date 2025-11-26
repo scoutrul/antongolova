@@ -1,0 +1,59 @@
+{
+  "id": "adguard-wallet",
+  "slug": "adguard-wallet",
+  "hero": {
+    "title": "AdGuard Wallet: Protecting crypto assets through advanced Fintech approaches",
+    "stats": [
+      { "value": "TBD", "description": "metric 1" },
+      { "value": "TBD", "description": "metric 2" }
+    ]
+  },
+  "meta": {
+    "items": [
+      { "value": "AdGuard", "label": "partner" },
+      { "value": "TBD", "label": "location" },
+      { "value": "TBD", "label": "roles" },
+      { "value": "TBD", "label": "what I did" },
+      { "value": "TBD", "label": "stack" }
+    ]
+  },
+  "overview": {
+    "title": "Product",
+    "sections": [{ "text": "AdGuard Wallet product description..." }]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Problem description..."
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Solution description..."
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Results description..."
+          }
+        ]
+      }
+    ]
+  },
+  "nextCase": {
+    "slug": "4real",
+    "title": "4Real"
+  }
+}

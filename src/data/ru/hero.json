@@ -1,0 +1,40 @@
+{
+  "title": "Привет, это Егор.",
+  "subtitle": "Я помог десяткам топовых команд повысить прибыль за счет дизайна",
+  "highlightText": "32+ млн со всего мира ценят мой UX",
+  "highlightAvatars": [
+    { "src": "/assets/avatars/ava-1.png", "alt": "Лицо пользователя 1" },
+    { "src": "/assets/avatars/ava-2.png", "alt": "Лицо пользователя 2" },
+    { "src": "/assets/avatars/ava-3.png", "alt": "Лицо пользователя 3" }
+  ],
+  "buttonText": "Познакомиться",
+  "stats": [
+    {
+      "value": "30+",
+      "description": "запущенных проектов — от MVP до масштабных редизайнов"
+    },
+    {
+      "value": "7+",
+      "description": "лет в продуктовых командах из множества индустрий"
+    },
+    {
+      "value": "3",
+      "description": "дня на первый продукт или фичу"
+    },
+    {
+      "value": "+12.6%",
+      "description": "к доходу — средний эффект от улучшений дизайна"
+    }
+  ],
+  "gallery": [
+    { "src": "/assets/videos/vid-1.mp4" },
+    { "src": "/assets/videos/vid-2.mp4" },
+    { "src": "/assets/videos/vid-3.mp4" },
+    { "src": "/assets/videos/vid-4.mp4" }
+  ],
+  "galleryMobile": [
+    { "src": "/assets/videos/vid-1-m.mp4" },
+    { "src": "/assets/videos/vid-2-m.mp4" },
+    { "src": "/assets/videos/vid-3-m.mp4" }
+  ]
+}

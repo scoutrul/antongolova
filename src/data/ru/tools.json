@@ -1,0 +1,36 @@
+{
+  "title": "Результат, а не процесс",
+  "content": {
+    "question": "Как я работаю?",
+    "columns": [
+      "Моя философия – это работа win-win-win, где все выигрывают от нашего сотрудничества: прибыль бизнеса повышается, клиенты довольны",
+      "Ну а я получаю не только справедливое вознаграждение, основанное на результатах работы, но и расту вместе с командой"
+    ]
+  },
+  "items": [
+    {
+      "icon": "/assets/icons/tools/experience-startups.svg",
+      "text": "Опыт от стартапов до экосистем крупных компаний"
+    },
+    {
+      "icon": "/assets/icons/tools/experience-industries.svg",
+      "text": "Опыт во множестве индустрий: FinTech, eCommerce, iGaming, AI, Cloud Services"
+    },
+    {
+      "icon": "/assets/icons/tools/experience-platforms.svg",
+      "text": "Большой опыт со всеми платформами: Web/mobile, iOS, Android"
+    },
+    {
+      "icon": "/assets/icons/tools/collaboration.svg",
+      "text": "Работаю напрямую с командой разработки и PM"
+    },
+    {
+      "icon": "/assets/icons/tools/self-organization.svg",
+      "text": "Самостоятельно организую всю работу от анализа до сдачи релиза"
+    },
+    {
+      "icon": "/assets/icons/tools/transparency.svg",
+      "text": "Формирую сроки, цели и KPI, чтобы сотрудничество было прозрачным"
+    }
+  ]
+}

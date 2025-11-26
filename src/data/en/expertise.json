@@ -1,0 +1,38 @@
+{
+  "title": "Team in one expert",
+  "subtitle": "Get not just a designer, but a partner who cares about business and combines the functions of an entire team",
+  "items": [
+    {
+      "title": "Designer",
+      "description": "I create a convenient and beautiful product",
+      "items": [
+        "Layouts in Figma",
+        "Documentation in Notion",
+        "Development support"
+      ]
+    },
+    {
+      "title": "Design Lead",
+      "description": "I build process and quality standards",
+      "items": [
+        "Design review",
+        "Mentoring and development",
+        "Hiring and onboarding"
+      ]
+    },
+    {
+      "title": "Product",
+      "description": "Connection of analytics, sales and marketing",
+      "items": [
+        "Tasks in JIRA",
+        "Estimation and prioritization",
+        "Features and roadmap"
+      ]
+    },
+    {
+      "title": "Analyst",
+      "description": "Analysis of metrics, hypotheses on pure caffeine",
+      "items": ["Market analysis", "Specific goals", "A/B tests"]
+    }
+  ]
+}

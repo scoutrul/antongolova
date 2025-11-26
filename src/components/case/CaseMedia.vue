@@ -1,0 +1,142 @@
+<template>
+  <div v-if="isArray" class="flex flex-col gap-6">
+    <!-- Массив медиа-файлов -->
+    <div
+      v-for="(item, index) in mediaItems"
+      :key="index"
+      class="media-container bg-white-90 rounded-[16px] overflow-hidden"
+    >
+      <!-- Видео -->
+      <video
+        v-if="isVideoFile(item.src)"
+        :src="item.src"
+        :poster="item.poster"
+        class="w-full h-full object-cover bg-white-100"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+      />
+
+      <!-- Изображение -->
+      <img
+        v-else
+        :src="item.src"
+        :alt="item.alt || alt"
+        class="w-full h-full object-cover bg-white-100"
+        loading="lazy"
+      />
+    </div>
+  </div>
+
+  <!-- Одиночный медиа-файл -->
+  <div
+    v-else
+    class="media-container bg-white-90 rounded-[16px] overflow-hidden"
+    :class="containerClass"
+  >
+    <!-- Видео -->
+    <video
+      v-if="isVideo"
+      :src="currentSrc"
+      :poster="poster"
+      class="w-full h-full object-cover bg-white-100"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    />
+
+    <!-- Изображение -->
+    <img
+      v-else
+      :src="currentSrc"
+      :alt="alt"
+      class="w-full h-full object-cover bg-white-100"
+      loading="lazy"
+    />
+  </div>
+</template>
+
+<script setup>
+import { computed } from "vue";
+import { useBreakpoints } from "@/composables/useBreakpoints.js";
+
+const { gtMd } = useBreakpoints();
+
+const props = defineProps({
+  src: {
+    type: [String, Array],
+    required: true,
+  },
+  srcMobile: {
+    type: [String, Array],
+    default: null,
+  },
+  alt: {
+    type: String,
+    default: "Case study media",
+  },
+  poster: {
+    type: String,
+    default: null,
+  },
+});
+
+// Проверка, является ли src массивом
+const isArray = computed(() => Array.isArray(props.src));
+
+// Функция для определения типа файла
+const isVideoFile = (url) => {
+  const videoExtensions = [".mp4", ".webm", ".ogg", ".mov"];
+  return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext));
+};
+
+// Для массива: формируем список элементов с учетом mobile версий
+const mediaItems = computed(() => {
+  if (!isArray.value) return [];
+
+  return props.src.map((url, index) => {
+    let src = url;
+
+    // Проверяем, есть ли mobile версия для этого элемента
+    if (
+      props.srcMobile &&
+      Array.isArray(props.srcMobile) &&
+      props.srcMobile[index] &&
+      !gtMd.value
+    ) {
+      src = props.srcMobile[index];
+    }
+
+    return {
+      src,
+      poster: null, // Можно расширить для поддержки массива poster'ов
+      alt: props.alt,
+    };
+  });
+});
+
+// Для одиночного файла
+const isVideo = computed(() => {
+  if (isArray.value) return false;
+  return isVideoFile(props.src);
+});
+
+// Выбираем источник в зависимости от размера экрана (для одиночного)
+const currentSrc = computed(() => {
+  if (isArray.value) return "";
+  if (props.srcMobile && !gtMd.value) {
+    return props.srcMobile;
+  }
+  return props.src;
+});
+</script>
+
+<style scoped>
+.media-container {
+  @apply w-full;
+}
+</style>

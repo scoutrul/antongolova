@@ -1,0 +1,124 @@
+{
+  "id": "adguard-mail",
+  "slug": "adguard-mail",
+  "hero": {
+    "title": "AdGuard Mail: how we created a new generation of mail service",
+    "stats": [
+      {
+        "value": "86%",
+        "description": "retention after the first month"
+      },
+      {
+        "value": "4.8/5",
+        "description": "NPS for early users"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "AdGuard",
+        "label": "partner"
+      },
+      {
+        "value": "Cyprus",
+        "label": "location"
+      },
+      {
+        "value": "Senior Product Designer, UX/UI",
+        "label": "roles"
+      },
+      {
+        "value": "Design system, brand, web application",
+        "label": "what I did"
+      },
+      {
+        "value": "React, Figma, Design systems, Autolayouts, Tokens, Variabes, iOS guidelines, Animations, A/B testing, Edge cases",
+        "label": "stack"
+      }
+    ]
+  },
+  "overview": {
+    "title": "Product",
+    "sections": [
+      {
+        "text": "AdGuard Mail is an end—to-end encrypted mail service created as an alternative to overloaded, insecure, and obsolete mail solutions on the market. This is one of the AdGuard products where I worked as the chief designer. When I joined the project, the product did not exist."
+      },
+      {
+        "text": "There was just an idea: \"what if we make an email that can be trusted, and which at the same time will be convenient, fast and modern?\". That's how one of the most interesting and challenging grocery adventures began."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text-image",
+            "text": "Launching any mail service is not just about \"making an interface.\" This is working with deeply ingrained habits of people, with privacy, trust, and a huge number of edge cases.\n\nWe faced several challenges:\n- the market is overflowing with giants — how do we stand out?\n- email clients are often confusing, heavy, and overloaded with features;\n- users don't trust the new services in terms of security;\n- UX solutions must be perfect, because mail is a tool for every day;\n- the end-to-end encryption format adds complexity: errors are unacceptable, and there are a lot of scenarios \"behind the scenes\".\n\nWe realized that if we want to make a difference, the product must be simple, powerful, and honest at the same time.\nSo it all started with research.",
+            "image": "/assets/images/case-2-1.png"
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "We have formed several key areas of work.: - market research, competitors and users: to understand what niche we can occupy, what people don't like about the usual mailers, what they are afraid of, what security issues are important\n- creating a brand and a styling guide from scratch: the appearance and language of the product should inspire trust, a sense of security and modernity - creating a scalable design system: from tokens to complex components - everything should be flexible, extensible and easily supported - the web application of the mail service: design all key scenarios: emails, folders, search, threads, contacts, settings, security, E2EE, complex edge cases."
+          }
+        ]
+      },
+      {
+        "title": "Action",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "We started practically from scratch. There wasn't even a rough prototype, just a high standard of quality and an understanding that the mail should be perfect."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Deep research: What people really hate about mail",
+            "text": "I did a lot of UX research:\n- interviews with users from different countries;\n- competitor analysis — from Gmail to Proton and Superhuman;\n- research scenarios in which people most often make mistakes;\n- barriers to security and trust;\n- usage patterns in different age groups.\nThe main conclusion is that people want an email that \"just works\", does not load their heads and does not hide important things behind unnecessary noise. They are also very afraid of losing their data or being hacked.\n\nThis has become the foundation of the UX architecture."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Brand and visual language",
+            "text": "The user should feel safe from the first screen. I created a styling guide that conveys lightness, technology, minimalism and confidence. No heavy typography, no \"military\" green shields. Privacy should be felt, not shouted at."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Design system: the skeleton of the entire product",
+            "text": "It was my biggest job yet. I have created a full-fledged product level design system:\n- tokens for color, typography, fonts, shadows, margins\n- related variables\n- a huge library of components: buttons, fields, toasts, mods, lists, cards, filters, tags, chevrons, statuses, pipes, toolbars, E2EE markers\n- dozens of states for each component: hover, active, disabled, loading, mixed states\n- adaptive patterns for mobile mail\n- detailed documentation that could be used by both the design team and the developers.\n\nIt could be scaled to any AdGuard product. It was thanks to this system that the development was stable and fast.",
+            "image": "/assets/images/case-2-2.png"
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Webmailer: the most difficult and the most interesting",
+            "text": "It was a huge amount of work, from basic actions to incredibly rare cases. I designed:\n- folder and thread interface\n- a system for reading, sending, and encrypting\n- quick actions\n- multiselect and mass operations\n- filters, tags, archiving\n- encryption key management\n- integrations and settings.\nEdge cases were the most difficult:\n- lost keys\n- restoring access\n- conflicting sessions\n- multiaccounting\n- decryption of old emails\n- mixed E2EE/non-E2EE states in threads\n- changes in the status of the letter in real time.\n\nEach scenario had to be worked out down to the micro—details, otherwise the user would simply lose the email or access. And this cannot be allowed under any circumstances.",
+            "image": "/assets/images/case-2-3.png"
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Despite the high competition, the new product quickly found its audience and became one of the key directions of AdGuard.\n\n86% retention after the first month: the mailer has become a familiar tool, not an experiment\nNPS 4.8 / 5: main reviews: \"Finally, an email where nothing pisses you off.\"\nThe design system became the basis for all future AdGuard Mail products: its scalability allowed us to expand the service without chaos."
+          },
+          {
+            "type": "testimonial",
+            "quote": "“This is the first time I've seen such a product launch rate”",
+            "author": "Igor Lukyanov, CEO AdGuard"
+          }
+        ]
+      }
+    ]
+  },
+  "nextCase": {
+    "slug": "legaline",
+    "title": "Legaline"
+  }
+}

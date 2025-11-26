@@ -1,0 +1,47 @@
+{
+  "title": "More than just design",
+  "attributes": [
+    "Roles",
+    "Cost",
+    "Taxes",
+    "Start",
+    "Flexibility",
+    "Engagement"
+  ],
+  "columns": [
+    {
+      "title": "With me",
+      "highlight": true,
+      "items": [
+        "Designer, lead, analyst",
+        "Lower than 4 specialists",
+        "I pay myself",
+        "Same day",
+        "Flexible employment",
+        "In-house, but without hiring"
+      ]
+    },
+    {
+      "title": "In-house designer",
+      "items": [
+        "Only designer",
+        "High, only 1 role",
+        "High",
+        "1–3 months",
+        "Impossible",
+        "In-house"
+      ]
+    },
+    {
+      "title": "Freelance",
+      "items": [
+        "Only designer",
+        "One-time, more expensive per hour",
+        "Not always",
+        "1–2 weeks",
+        "Not always",
+        "Limited"
+      ]
+    }
+  ]
+}

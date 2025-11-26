@@ -1,0 +1,20 @@
+{
+  "slogan": "Growing together",
+  "navigationItems": [
+    {
+      "text": "View cases",
+      "type": "scroll",
+      "target": "section-cases"
+    },
+    {
+      "text": "Download CV",
+      "type": "download",
+      "target": "/assets/cvs/CV – George Vorobyov – EN.pdf"
+    }
+  ],
+  "languages": [
+    { "code": "en", "label": "English" },
+    { "code": "ru", "label": "Русский" }
+  ],
+  "currentLanguage": "en"
+}

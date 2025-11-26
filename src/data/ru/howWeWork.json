@@ -1,0 +1,45 @@
+{
+  "title": "Как мы будем работать",
+  "items": [
+    {
+      "icon": "/assets/icons/howwework/start.svg",
+      "title": "Старт",
+      "description": "Разберу проблемы, вижн и цели. Проведу анализ и сформирую роадмап"
+    },
+    {
+      "icon": "/assets/icons/howwework/tasks.svg",
+      "title": "Задачи",
+      "description": "Заведу, отприоритизирую и актуализирую задачи и статусы в JIRA/Notion/Slack"
+    },
+    {
+      "icon": "/assets/icons/howwework/speed.svg",
+      "title": "Скорость",
+      "description": "В разы быстрее, чем у обычного дизайнера. Использую AI, горячие клавиши и инструменты автоматизации"
+    },
+    {
+      "icon": "/assets/icons/howwework/transfer.svg",
+      "title": "Передача",
+      "description": "Тщательно проработаю макеты с edge cases, подготовлю анимации, ассеты и гайды в Figma/Notion"
+    },
+    {
+      "icon": "/assets/icons/howwework/autonomy.svg",
+      "title": "Автономность",
+      "description": "Самостоятельно организую работу, найм и закрою задачи не отвлекая ресурсы команды"
+    },
+    {
+      "icon": "/assets/icons/howwework/outlook.svg",
+      "title": "Кругозор",
+      "description": "Запущу целые продукты как в качестве единственного дизайнера-визионера, так и в составе сложных команд"
+    },
+    {
+      "icon": "/assets/icons/howwework/system.svg",
+      "title": "Системность",
+      "description": "Предоставлю решения от иконок и графики до дизайн-систем и готовых к разработке продуктов"
+    },
+    {
+      "icon": "/assets/icons/howwework/support.svg",
+      "title": "Сопровождение",
+      "description": "Тщательно проконтролирую разработку и доведу до идеального результата"
+    }
+  ]
+}
