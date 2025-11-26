@@ -1,9 +1,7 @@
 <template>
-  <div
-    class="relative min-h-screen z-20"
-    :class="bg === 'black' ? 'bg-black-90' : 'bg-white-90'"
-  >
+  <div class="relative min-h-screen z-20">
     <StickyHeader
+      v-if="props.headerTheme === 'dark'"
       v-bind="headerProps"
       @cta-click="handleCtaClick"
       @nav-case-scroll="$emit('header-nav-case-scroll')"

@@ -44,7 +44,9 @@
               class="text-p2 hover:text-primary transition-colors whitespace-nowrap"
               :class="navLinkColorClass"
               :target="item.type === 'download' ? '_blank' : undefined"
-              :rel="item.type === 'download' ? 'noopener noreferrer' : undefined"
+              :rel="
+                item.type === 'download' ? 'noopener noreferrer' : undefined
+              "
               @click="handleNavClick($event, item)"
             >
               {{ item.text }}
@@ -174,23 +176,23 @@ const goToHome = () => {
 
 // Получить href для навигационной ссылки
 const getNavHref = (item) => {
-  if (typeof item === 'string') return '#';
-  if (item.type === 'download') return item.target;
-  if (item.type === 'scroll') return `#${item.target}`;
-  return '#';
+  if (typeof item === "string") return "#";
+  if (item.type === "download") return item.target;
+  if (item.type === "scroll") return `#${item.target}`;
+  return "#";
 };
 
 // Обработка клика по навигации
 const handleNavClick = (event, item) => {
   // Если это download, не предотвращаем дефолтное поведение
-  if (item.type === 'download') {
+  if (item.type === "download") {
     return;
   }
 
   // Если это scroll - просто эмитим событие, страницы сами разберутся
-  if (item.type === 'scroll') {
+  if (item.type === "scroll") {
     event.preventDefault();
-    emit('nav-case-scroll');
+    emit("nav-case-scroll");
   }
 };
 </script>
