@@ -14,6 +14,7 @@
       <!-- Tools (Dark) -->
       <ToolsSection
         ref="toolsSectionRef"
+        class="mt-12"
         :id="sectionAnchors.tools.section"
         :aria-labelledby="sectionAnchors.tools.heading"
         :heading-id="sectionAnchors.tools.heading"

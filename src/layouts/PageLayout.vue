@@ -1,7 +1,7 @@
 <template>
   <div class="relative min-h-screen z-20">
     <StickyHeader
-      v-if="props.headerTheme === 'dark'"
+      v-if="props.headerTheme === 'dark' && router.path !== '/'"
       v-bind="headerProps"
       @cta-click="handleCtaClick"
       @nav-case-scroll="$emit('header-nav-case-scroll')"
@@ -19,6 +19,9 @@ import { computed } from "vue";
 import StickyHeader from "@/components/sections/StickyHeader.vue";
 import BenefitsSection from "@/components/sections/BenefitsSection.vue";
 import { useLanguageStore, useContentStore } from "@/stores";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const languageStore = useLanguageStore();
 const contentStore = useContentStore();
@@ -51,7 +54,7 @@ const headerProps = computed(() => ({
   languages: contentStore.header.languages,
   currentLanguage: languageStore.currentLanguage,
   theme: props.headerTheme,
-  buttonText: contentStore.hero.buttonText,
+  buttonText: "",
 }));
 
 // Собираем props для футера из store
