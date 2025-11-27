@@ -65,7 +65,7 @@ import AvatarStack from "@/components/ui/AvatarStack.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 import { useLanguageStore } from "@/stores/language.js";
-import { createScrambleTextSequence } from "@/utils/gsapAnimations.js";
+import { createScrambleTextSequence } from "@/utils/ScrambleText.js";
 
 const { gtXl, currentBreakpoint } = useBreakpoints();
 const languageStore = useLanguageStore();

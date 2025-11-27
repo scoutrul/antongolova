@@ -1,10 +1,11 @@
 <template>
-  <BaseContainer :as="'section'" bg="black">
-    <div class="w-full flex flex-col gap-10 xl:gap-16">
+  <BaseContainer :as="'section'" bg="black" class="relative overflow-hidden">
+    <NeuralBg />
+    <div class="relative w-full flex flex-col gap-10 xl:gap-16">
       <BaseHeading
         :level="gtLg ? 3 : 4"
         :as="gtLg ? 'h3' : 'h4'"
-        class="w-full text-white-90"
+        class="w-full text-white-90 backdrop-blur-[20px] p-3 md:p-6 rounded-lg -mx-3 md:-mx-6 max-w-fit"
         :id="headingId || undefined"
       >
         {{ title }}
@@ -75,6 +76,7 @@
 <script setup>
 import { computed } from "vue";
 import { BaseContainer, BaseHeading, BaseText } from "@/components/base";
+import NeuralBg from "@/components/ui/bg-neural/NeuralBg.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtMd, ltLg } = useBreakpoints();
@@ -112,3 +114,5 @@ const gridClasses = computed(() => {
   ].join(" ");
 });
 </script>
+
+<style scoped></style>

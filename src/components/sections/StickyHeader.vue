@@ -81,7 +81,7 @@ import { useRouter } from "vue-router";
 import BaseContainer from "@/components/base/BaseContainer.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
 import LanguageToggle from "@/components/ui/LanguageToggle.vue";
-import { createScrambleTextAnimation } from "@/utils/gsapAnimations.js";
+import { createScrambleTextAnimation } from "@/utils/ScrambleText.js";
 const logoMark = "/assets/icons/logo-mark.svg";
 
 const router = useRouter();
