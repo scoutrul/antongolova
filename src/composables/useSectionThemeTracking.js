@@ -60,8 +60,8 @@ export function useSectionThemeTracking(sectionRefs) {
 
       ScrollTrigger.create({
         trigger: sectionElement,
-        start: "top 180", // Когда верх секции касается верха экрана
-        end: "bottom top", // Когда низ секции касается верха экрана
+        start: "top top", // Когда верх секции касается верха экрана
+        end: "bottom bottom", // Когда низ секции касается верха экрана
         onEnter: () => {
           // Секция входит в верх экрана
           const sectionTheme = sectionThemes[key];
@@ -71,12 +71,6 @@ export function useSectionThemeTracking(sectionRefs) {
         onEnterBack: () => {
           // Скроллим назад, секция снова входит в верх экрана
           const sectionTheme = sectionThemes[key];
-          headerTheme.value = sectionTheme === "dark" ? "dark" : "light";
-        },
-        onRefresh: () => {
-          // Секция входит в верх экрана
-          const sectionTheme = sectionThemes[key];
-          // Header должен быть противоположным теме секции
           headerTheme.value = sectionTheme === "dark" ? "dark" : "light";
         },
       });
