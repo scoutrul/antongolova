@@ -2,7 +2,7 @@
   <BaseContainer
     as="header"
     :max-width="'full'"
-    class="fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 overflow-visible"
+    class="!fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 !overflow-visible"
   >
     <div
       class="w-full backdrop-blur-[20px] rounded-lg md:rounded-xl transition-all duration-200 flex items-center justify-between md:justify-start gap-6 p-3 md:px-6 md:gap-10"

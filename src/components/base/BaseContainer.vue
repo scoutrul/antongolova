@@ -37,7 +37,8 @@ const props = defineProps({
 });
 
 const containerClasses = computed(() => {
-  const baseClasses = "w-full px-4 py-16 md:px-10 lg:px-16 xl:py-40 xl:py-40";
+  const baseClasses =
+    "w-full px-4 py-16 md:px-10 lg:px-16 xl:py-40 xl:py-40 relative overflow-hidden";
 
   // Overflow
   const overflowClasses = `overflow-${props.overflow}`;

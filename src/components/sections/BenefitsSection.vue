@@ -3,15 +3,18 @@
     :as="'section'"
     :max-width="'1052px'"
     bg="black"
-    class="relative"
+    class="relative overflow-hidden"
   >
+    <NeuralBg class="opacity-80" />
     <DecorativeLine
       :pin-count="0"
       class="hidden lg:block !absolute top-0 left-1/2 transform -translate-x-1/2"
       :style="{ top: gtXl ? '314px' : ltLg ? '405px' : '282px' }"
     />
 
-    <div class="flex flex-col lg:flex-row gap-6 sm:gap-8 items-start w-full">
+    <div
+      class="relative flex flex-col lg:flex-row gap-6 sm:gap-8 items-start w-full"
+    >
       <div class="flex flex-col items-start flex-0">
         <!-- Заголовок секции -->
         <BaseHeading
@@ -42,7 +45,7 @@
       </div>
 
       <div
-        class="flex flex-col gap-6 items-start w-full xl:w-[max-content] sm:self-stretch min-w-[240px] sm:min-w-auto shrink-1"
+        class="relative flex flex-col gap-6 items-start w-full xl:w-[max-content] sm:self-stretch min-w-[240px] sm:min-w-auto shrink-1"
       >
         <ContactButton @click="handleCtaClick">
           {{ ctaButtonText }}
@@ -57,6 +60,7 @@ import { BaseContainer, BaseHeading } from "@/components/base";
 import BenefitCard from "@/components/ui/BenefitCard.vue";
 import DecorativeLine from "@/components/ui/DecorativeLine.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
+import NeuralBg from "@/components/ui/bg/NeuralBg.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtXl, ltXl, ltLg } = useBreakpoints();

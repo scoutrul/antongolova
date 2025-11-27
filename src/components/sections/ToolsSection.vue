@@ -12,7 +12,7 @@
       </BaseHeading>
 
       <template v-if="content?.question || content?.columns?.length">
-        <div class="h-px w-full bg-black-10/60" />
+        <div class="h-px w-full" />
 
         <div class="flex flex-col gap-6 lg:gap-8 mb-24 xl:mb-32">
           <BaseText
@@ -76,7 +76,7 @@
 <script setup>
 import { computed } from "vue";
 import { BaseContainer, BaseHeading, BaseText } from "@/components/base";
-import NeuralBg from "@/components/ui/bg-neural/NeuralBg.vue";
+import NeuralBg from "@/components/ui/bg/NeuralBg.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtMd, ltLg } = useBreakpoints();

@@ -1,7 +1,7 @@
 <template>
   <canvas
     ref="canvasRef"
-    class="absolute inset-0 !w-full !h-full pointer-events-none"
+    class="absolute inset-0 !w-full !h-full pointer-events-none bg-black-90"
   />
 </template>
 
@@ -13,6 +13,11 @@ const props = defineProps({
   hue: { type: Number, required: false, default: 200 },
   saturation: { type: Number, required: false, default: 0.8 },
   chroma: { type: Number, required: false, default: 0.6 },
+  theme: {
+    type: String,
+    default: "dark",
+    validator: (value) => ["dark", "light"].includes(value),
+  },
 });
 
 const canvasRef = ref(null);
@@ -22,6 +27,8 @@ const sceneRef = ref(null);
 const meshRef = ref(null);
 const cameraRef = ref(null);
 let resizeObserver = null;
+let intersectionObserver = null;
+const isVisible = ref(true);
 
 const vertexShader = `
   precision mediump float;
@@ -47,6 +54,7 @@ const fragmentShader = `
   uniform float u_hue;
   uniform float u_saturation;
   uniform float u_chroma;
+  uniform float u_theme_factor;
 
   vec2 rotate(vec2 uv, float th) {
       return mat2(cos(th), sin(th), -sin(th), cos(th)) * uv;
@@ -103,10 +111,16 @@ const fragmentShader = `
       );
 
       // Convert to RGB
-      color = hsl2rgb(hsl);
-      color = color * noise;
+      vec3 accentColor = hsl2rgb(hsl);
+      vec3 lightBg = vec3(246.0/255.0, 246.0/255.0, 245.0/255.0);
 
-      gl_FragColor = vec4(color, noise);
+      vec3 darkColor = accentColor * noise;
+      vec3 lightColor = clamp(lightBg - accentColor * (0.35 * noise), 0.0, 1.0);
+
+      vec3 finalColor = mix(darkColor, lightColor, u_theme_factor);
+      float alpha = mix(noise, 0.95, u_theme_factor);
+
+      gl_FragColor = vec4(finalColor, alpha);
   }
 `;
 
@@ -120,6 +134,7 @@ function initOGL() {
 
       dpr: Math.min(window.devicePixelRatio, 2),
     });
+    renderer.gl.clearColor(0, 0, 0, 0);
 
     const camera = new Camera(renderer.gl);
     const scene = new Transform();
@@ -139,6 +154,7 @@ function initOGL() {
         u_hue: { value: props.hue },
         u_saturation: { value: props.saturation },
         u_chroma: { value: props.chroma },
+        u_theme_factor: { value: props.theme === "light" ? 1 : 0 },
       },
     });
 
@@ -201,6 +217,27 @@ function setupResizeObserver() {
   resizeObserver.observe(canvas);
 }
 
+function setupIntersectionObserver() {
+  if (intersectionObserver) {
+    intersectionObserver.disconnect();
+    intersectionObserver = null;
+  }
+
+  const canvas = canvasRef.value;
+  if (!canvas) return;
+
+  intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        isVisible.value = entry.isIntersecting;
+      });
+    },
+    { threshold: 0.01 }
+  );
+
+  intersectionObserver.observe(canvas);
+}
+
 function render() {
   const renderer = rendererRef.value;
   const scene = sceneRef.value;
@@ -208,6 +245,10 @@ function render() {
   const mesh = meshRef.value;
 
   if (!renderer || !scene || !camera || !mesh) return;
+  if (!isVisible.value) {
+    animationRef.value = requestAnimationFrame(render);
+    return;
+  }
 
   const currentTime = performance.now();
   const animatedHue = (props.hue + currentTime * HUE_CYCLE_SPEED) % 360;
@@ -251,11 +292,22 @@ watch(
   }
 );
 
+watch(
+  () => props.theme,
+  (newTheme) => {
+    const mesh = meshRef.value;
+    if (mesh && mesh.program && mesh.program.uniforms.u_theme_factor) {
+      mesh.program.uniforms.u_theme_factor.value = newTheme === "light" ? 1 : 0;
+    }
+  }
+);
+
 onMounted(() => {
   if (initOGL()) {
     render();
 
     setupResizeObserver();
+    setupIntersectionObserver();
   }
 });
 
@@ -267,6 +319,10 @@ onUnmounted(() => {
   if (resizeObserver) {
     resizeObserver.disconnect();
     resizeObserver = null;
+  }
+  if (intersectionObserver) {
+    intersectionObserver.disconnect();
+    intersectionObserver = null;
   }
   // Clean up OGL resources
   if (rendererRef.value) {
