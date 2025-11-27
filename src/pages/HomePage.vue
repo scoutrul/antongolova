@@ -34,6 +34,16 @@
         :cases="content.cases.items"
       />
 
+      <!-- How We Work Секция -->
+      <HowWeWorkSection
+        ref="howWeWorkSectionRef"
+        :id="sectionAnchors.howWeWork.section"
+        :aria-labelledby="sectionAnchors.howWeWork.heading"
+        :heading-id="sectionAnchors.howWeWork.heading"
+        :title="content.howWeWork.title"
+        :items="content.howWeWork.items"
+      />
+
       <!-- FAQ Секция (Lazy) -->
       <FaqSection
         ref="faqSectionRef"
@@ -53,6 +63,7 @@ import PageLayout from "@/layouts/PageLayout.vue";
 import ToolsSection from "@/components/sections/ToolsSection.vue";
 import CasesSection from "@/components/sections/CasesSection.vue";
 import FaqSection from "@/components/sections/FaqSection.vue";
+import HowWeWorkSection from "@/components/sections/HowWeWorkSection.vue";
 
 import { useSectionThemeTracking } from "@/composables/useSectionThemeTracking.js";
 import { useContentStore } from "@/stores";
@@ -73,12 +84,13 @@ const sectionAnchors = SECTION_ANCHORS;
 const toolsSectionRef = ref(null);
 const casesSectionRef = ref(null);
 const faqSectionRef = ref(null);
-
+const howWeWorkSectionRef = ref(null);
 // Используем композбл для отслеживания тем секций
 const { headerTheme } = useSectionThemeTracking({
   toolsSectionRef,
   casesSectionRef,
   faqSectionRef,
+  howWeWorkSectionRef,
 });
 
 // Обработка скролла к секции кейсов

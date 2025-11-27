@@ -4,11 +4,6 @@ import { useLanguageStore } from "./language";
 
 // Импорт полных данных кейсов (русский)
 import caseAg1Ru from "@/data/ru/cases/ag1.json";
-import caseAdguardWalletRu from "@/data/ru/cases/adguard-wallet.json";
-import case4realRu from "@/data/ru/cases/4real.json";
-import caseLegalineRu from "@/data/ru/cases/legaline.json";
-import caseServeroidRu from "@/data/ru/cases/serveroid.json";
-import caseAdguardMailRu from "@/data/ru/cases/adguard-mail.json";
 
 // Импорт полных данных кейсов (английский)
 import caseAg1En from "@/data/en/cases/ag1.json";
@@ -22,14 +17,7 @@ export const useCasesStore = defineStore("cases", () => {
   const languageStore = useLanguageStore();
 
   // State - загружаем кейсы из отдельных JSON файлов
-  const casesRu = ref([
-    caseAg1Ru,
-    caseAdguardWalletRu,
-    case4realRu,
-    caseLegalineRu,
-    caseServeroidRu,
-    caseAdguardMailRu,
-  ]);
+  const casesRu = ref([caseAg1Ru]);
   const casesEn = ref([
     caseAg1En,
     caseAdguardWalletEn,

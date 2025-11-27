@@ -61,7 +61,6 @@ const headerProps = computed(() => ({
 const computedFooterProps = computed(() => ({
   title: contentStore.benefits.title,
   benefits: contentStore.benefits.items,
-  ctaText: contentStore.benefits.ctaText,
   ctaButtonText: contentStore.benefits.ctaButtonText,
   ...props.footerProps, // Дополнительные атрибуты (id, aria-labelledby и т.д.)
 }));

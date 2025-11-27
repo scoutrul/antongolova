@@ -42,12 +42,8 @@
       </div>
 
       <div
-        class="flex flex-col gap-6 items-start w-full xl:w-[max-content] sm:py-4 sm:self-stretch min-w-[240px] sm:min-w-auto shrink-1"
+        class="flex flex-col gap-6 items-start w-full xl:w-[max-content] sm:self-stretch min-w-[240px] sm:min-w-auto shrink-1"
       >
-        <BaseText size="p3" class="text-black-50">
-          {{ ctaText }}
-        </BaseText>
-
         <ContactButton @click="handleCtaClick">
           {{ ctaButtonText }}
         </ContactButton>
@@ -57,7 +53,7 @@
 </template>
 
 <script setup>
-import { BaseContainer, BaseHeading, BaseText } from "@/components/base";
+import { BaseContainer, BaseHeading } from "@/components/base";
 import BenefitCard from "@/components/ui/BenefitCard.vue";
 import DecorativeLine from "@/components/ui/DecorativeLine.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
@@ -73,10 +69,6 @@ const props = defineProps({
   benefits: {
     type: Array,
     required: true,
-  },
-  ctaText: {
-    type: String,
-    default: "",
   },
   ctaButtonText: {
     type: String,

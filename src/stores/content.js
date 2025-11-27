@@ -5,14 +5,9 @@ import { useLanguageStore } from "./language";
 // Импорт русских данных
 import metaRu from "@/data/ru/meta.json";
 import headerRu from "@/data/ru/header.json";
-import heroRu from "@/data/ru/hero.json";
 import toolsRu from "@/data/ru/tools.json";
 import casesRu from "@/data/ru/cases.json";
 import howWeWorkRu from "@/data/ru/howWeWork.json";
-import expertiseRu from "@/data/ru/expertise.json";
-import comparisonRu from "@/data/ru/comparison.json";
-import opportunitiesRu from "@/data/ru/opportunities.json";
-import reviewsRu from "@/data/ru/reviews.json";
 import faqRu from "@/data/ru/faq.json";
 import benefitsRu from "@/data/ru/benefits.json";
 
@@ -37,14 +32,9 @@ export const useContentStore = defineStore("content", () => {
   const dataRu = ref({
     meta: metaRu,
     header: headerRu,
-    hero: heroRu,
     tools: toolsRu,
     cases: casesRu,
     howWeWork: howWeWorkRu,
-    expertise: expertiseRu,
-    comparison: comparisonRu,
-    opportunities: opportunitiesRu,
-    reviews: reviewsRu,
     faq: faqRu,
     benefits: benefitsRu,
   });
@@ -67,9 +57,7 @@ export const useContentStore = defineStore("content", () => {
 
   // Getters
   const currentData = computed(() => {
-    return languageStore.currentLanguage === "en"
-      ? dataEn.value
-      : dataRu.value;
+    return languageStore.currentLanguage === "en" ? dataEn.value : dataRu.value;
   });
 
   // Секции для удобного доступа
