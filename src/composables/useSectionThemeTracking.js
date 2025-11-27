@@ -1,7 +1,6 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { watch } from "vue";
 import { useRoute } from "vue-router";
 /**
  * Композбл для отслеживания тем секций и управления темой хедера
@@ -59,7 +58,7 @@ export function useSectionThemeTracking(sectionRefs) {
 
       ScrollTrigger.create({
         trigger: sectionElement,
-        start: "top 8%", // Когда верх секции касается верха экрана
+        start: "top top", // Когда верх секции касается верха экрана
         end: "bottom bottom", // Когда низ секции касается верха экрана
         onEnter: () => {
           // Секция входит в верх экрана
