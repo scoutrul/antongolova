@@ -1,32 +1,6 @@
 <template>
-  <button
-    :class="buttonClasses"
-    :disabled="disabled || loading"
-    @click="handleClick"
-  >
-    <span v-if="loading" class="mr-2">
-      <svg
-        class="animate-spin h-4 w-4"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <circle
-          class="opacity-25"
-          cx="12"
-          cy="12"
-          r="10"
-          stroke="currentColor"
-          stroke-width="4"
-        ></circle>
-        <path
-          class="opacity-75"
-          fill="currentColor"
-          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        ></path>
-      </svg>
-    </span>
-    <slot />
+  <button :class="buttonClasses" :disabled="disabled" @click="handleClick">
+    <slot>{{ defaultText }}</slot>
   </button>
 </template>
 
@@ -49,9 +23,9 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
-  loading: {
-    type: Boolean,
-    default: false,
+  defaultText: {
+    type: String,
+    default: "",
   },
 });
 
@@ -65,7 +39,7 @@ const buttonClasses = computed(() => {
   const variantClasses = {
     // Primary: зеленая кнопка
     primary:
-      "bg-primary text-white-100 hover:bg-primary-hover active:bg-primary-active  ",
+      "bg-primary text-white-100 hover:bg-primary-hover active:bg-primary-active hover:text-secondary ",
 
     // Secondary: кнопка с border
     secondary:
@@ -76,7 +50,7 @@ const buttonClasses = computed(() => {
       "border-2 border-primary text-primary hover:bg-primary hover:text-white-100  ",
 
     // Ghost: прозрачная
-    ghost: "text-primary hover:bg-primary/10  ",
+    ghost: "hover:text-secondary hover:bg-transparent active:bg-transparent",
 
     // Tertiary: текстовая кнопка из шапки
     tertiary:
@@ -92,12 +66,11 @@ const buttonClasses = computed(() => {
   };
 
   // Состояние disabled
-  const disabledClasses =
-    props.disabled || props.loading
-      ? props.variant === "tertiary"
-        ? "cursor-not-allowed opacity-60"
-        : "opacity-50 cursor-not-allowed"
-      : "cursor-pointer";
+  const disabledClasses = props.disabled
+    ? props.variant === "tertiary"
+      ? "cursor-not-allowed opacity-60"
+      : "opacity-50 cursor-not-allowed"
+    : "cursor-pointer";
 
   return [
     "w-fit",
@@ -110,7 +83,7 @@ const buttonClasses = computed(() => {
 });
 
 const handleClick = (event) => {
-  if (!props.disabled && !props.loading) {
+  if (!props.disabled) {
     emit("click", event);
   }
 };

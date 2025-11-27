@@ -5,6 +5,7 @@
       @cta-click="handleCtaClick"
       @nav-case-scroll="handleNavCaseScroll"
       @language-change="handleLanguageChange"
+      @slogan-click="handleSloganClick"
       v-if="showHeader"
     />
 
@@ -21,14 +22,14 @@ import BenefitsSection from "@/components/sections/BenefitsSection.vue";
 import { useLanguageStore, useContentStore } from "@/stores";
 import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
 import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
-import { useRoute } from "vue-router";
+import { useRoute, useRouter } from "vue-router";
 
 const route = useRoute();
 const { scrollToElement } = useSmoothScroll();
 const sectionAnchors = SECTION_ANCHORS;
 const languageStore = useLanguageStore();
 const contentStore = useContentStore();
-
+const router = useRouter();
 const props = defineProps({
   // Header props
   headerTheme: {
@@ -92,6 +93,10 @@ const handleNavCaseScroll = () => {
 const showHeader = computed(() => {
   return route.name === "CaseDetail" || props.headerTheme === "dark";
 });
+
+const handleSloganClick = () => {
+  router.push("/");
+};
 </script>
 
 <style scoped></style>

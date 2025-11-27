@@ -46,7 +46,7 @@
       <div
         class="relative flex flex-col gap-6 items-start w-full xl:w-[max-content] sm:self-stretch min-w-[240px] sm:min-w-auto shrink-1"
       >
-        <ContactButton @click="handleCtaClick">
+        <ContactButton class="text-primary" @click="handleCtaClick">
           {{ ctaButtonText }}
         </ContactButton>
       </div>

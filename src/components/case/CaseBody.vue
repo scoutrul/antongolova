@@ -1,5 +1,10 @@
 <template>
-  <BaseContainer as="section" bg="white" overflow="visible" class="case-body">
+  <BaseContainer
+    as="section"
+    bg="white"
+    overflow="visible"
+    class="case-body !overflow-visible"
+  >
     <div
       class="w-full"
       :class="[gtXl ? 'flex items-start gap-[83px]' : 'flex flex-col']"

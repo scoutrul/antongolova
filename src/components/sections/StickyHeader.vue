@@ -5,71 +5,63 @@
     class="!fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 !overflow-visible"
   >
     <div
-      class="w-full backdrop-blur-[20px] rounded-lg md:rounded-xl transition-all duration-200 flex items-center justify-between md:justify-start gap-6 p-3 md:px-6 md:gap-10"
+      class="w-full flex items-center justify-between md:justify-start gap-6 p-3 md:px-6 md:gap-10"
       :class="containerClasses"
     >
-      <div class="flex items-center gap-6 xl:min-w-[322px]">
-        <div
-          class="flex items-center shrink-0 cursor-pointer"
-          :class="logoSizeClasses"
-          @click="goToHome"
-        >
-          <img
-            :src="logoMark"
-            alt="Logo"
-            class="w-full h-full object-contain"
-            :class="logoColorClass"
-          />
-        </div>
-
-        <div class="hidden xl:flex items-center gap-6">
-          <p
-            class="text-p2 whitespace-nowrap"
+      <div class="flex items-center gap-6 mr-auto">
+        <div class="flex items-center gap-6">
+          <span
+            class="text-p2 whitespace-nowrap cursor-pointer"
             :class="sloganColorClass"
             ref="sloganRef"
+            @click="$emit('slogan-click')"
           >
             {{ currentSlogan }}
-          </p>
+          </span>
         </div>
       </div>
 
-      <nav
-        class="hidden md:flex xl:flex-1 justify-center mr-auto"
-        aria-label="Основная навигация"
+      <div
+        class="flex items-center gap-6 backdrop-blur-[20px] rounded-lg md:rounded-xl pr-3 md:pr-6 -mr-3 md:-mr-6"
+        :class="navContainerClasses"
       >
-        <ul class="flex gap-6">
-          <li
-            v-for="(item, index) in navigationItems"
-            :key="index"
-            class="list-none"
-          >
-            <a
-              :href="getNavHref(item)"
-              class="text-p2 transition-colors whitespace-nowrap"
-              :class="navLinkColorClass"
-              :target="item.type === 'download' ? '_blank' : undefined"
-              :rel="
-                item.type === 'download' ? 'noopener noreferrer' : undefined
-              "
-              @click="handleNavClick($event, item)"
+        <nav
+          class="hidden md:flex xl:flex-1 justify-center mr-auto"
+          aria-label="Основная навигация"
+        >
+          <ul class="flex gap-6">
+            <li
+              v-for="(item, index) in navigationItems"
+              :key="index"
+              class="list-none"
             >
-              {{ item.text }}
-            </a>
-          </li>
-        </ul>
-      </nav>
+              <BaseButton
+                variant="ghost"
+                :class="theme === 'dark' ? 'text-white-90' : 'text-black-90'"
+                :href="getNavHref(item)"
+                :default-text="item.text"
+                @click="handleNavClick($event, item)"
+              />
+            </li>
+          </ul>
+        </nav>
 
-      <div class="flex items-center gap-6">
-        <div class="hidden lg:block">
-          <LanguageToggle
-            :theme="theme"
-            :languages="languages"
-            :model-value="currentLanguage"
-            @update:model-value="handleLanguageChange"
+        <div class="flex items-center gap-6">
+          <div class="hidden lg:block">
+            <LanguageToggle
+              :theme="theme"
+              :languages="languages"
+              :model-value="currentLanguage"
+              @update:model-value="handleLanguageChange"
+            />
+          </div>
+          <!-- CTA -->
+          <ContactButton
+            class="text-secondary"
+            @click="$emit('cta-click')"
+            :default-text="buttonText"
           />
         </div>
-        <!-- CTA -->
-        <ContactButton @click="$emit('cta-click')" :default-text="buttonText" />
       </div>
     </div>
   </BaseContainer>
@@ -82,8 +74,14 @@ import BaseContainer from "@/components/base/BaseContainer.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
 import LanguageToggle from "@/components/ui/LanguageToggle.vue";
 import { createScrambleTextAnimation } from "@/utils/ScrambleText.js";
-const logoMark = "/assets/icons/logo-mark.svg";
+import { BaseButton } from "../base";
 
+const emit = defineEmits([
+  "cta-click",
+  "nav-case-scroll",
+  "language-change",
+  "slogan-click",
+]);
 const router = useRouter();
 
 const props = defineProps({
@@ -113,8 +111,6 @@ const props = defineProps({
     default: "",
   },
 });
-
-const emit = defineEmits(["cta-click", "nav-case-scroll", "language-change"]);
 
 // Внутреннее состояние для отслеживания скролла
 const isScrolled = ref(false);
@@ -193,7 +189,14 @@ const isDark = computed(() => props.theme === "dark");
 
 // Классы для контейнера
 const containerClasses = computed(() => {
-  return isDark.value ? "bg-black-90-alpha" : "bg-white-90-alpha";
+  return isDark.value ? "#ffffff1a" : "#1616161a";
+});
+
+// Классы для навигационного блока (чип с меню и кнопками)
+const navContainerClasses = computed(() => {
+  // Светлая тема: светлый полупрозрачный фон
+  // Тёмная тема: тёмный полупрозрачный фон
+  return isDark.value ? "bg-black-90/10" : "bg-white-100/10";
 });
 
 // Классы для размера лого
