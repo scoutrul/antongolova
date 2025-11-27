@@ -13,7 +13,7 @@
       :stats="stats"
       :meta-items="metaItems"
       header-no-wrap
-      container-classes="case-hero-fixed invisible lg:visible fixed top-[128px] md:top-[160px] xl:top-[200px] left-[16px] right-[16px] md:left-[32px] md:right-[32px] lg:left-[64px] lg:right-[64px] z-0 max-w-[100vw] xl:max-w-[1592px]"
+      container-classes="case-hero-fixed visible fixed top-[128px] md:top-[160px] xl:top-[200px] left-[16px] right-[16px] md:left-[32px] md:right-[32px] lg:left-[64px] lg:right-[64px] z-0 max-w-[100vw] xl:max-w-[1592px]"
     />
 
     <!-- Дубликат для fixed эффекта -->
@@ -22,7 +22,7 @@
       :stats="stats"
       :meta-items="metaItems"
       header-no-wrap
-      container-classes="relative z-9 opacity-0 pointer-events-none"
+      container-classes="relative z-9 invisible pointer-events-none"
     />
   </BaseContainer>
 </template>

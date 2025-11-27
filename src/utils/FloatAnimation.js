@@ -4,10 +4,10 @@ import gsap from "gsap";
  * Создает анимацию парения для элемента по всем осям
  * @param {HTMLElement} element - DOM элемент для анимации
  * @param {Object} options - Опции анимации
- * @param {number} options.duration - Длительность анимации (по умолчанию 2-3.5 сек, рандом)
- * @param {number} options.xOffset - Смещение по оси X (по умолчанию 3-8px, рандом)
- * @param {number} options.yOffset - Смещение по оси Y (по умолчанию 5-15px, рандом)
- * @param {number} options.zOffset - Смещение по оси Z (по умолчанию 0-5px, рандом)
+ * @param {number} options.duration - Длительность анимации (по умолчанию 2-4 сек, рандом)
+ * @param {number} options.xOffset - Смещение по оси X (по умолчанию -5 до 5px, рандом)
+ * @param {number} options.yOffset - Смещение по оси Y (по умолчанию -10 до 10px, рандом)
+ * @param {number} options.zOffset - Смещение по оси Z (по умолчанию -5 до 5px, рандом)
  * @param {number} options.delay - Задержка перед началом (по умолчанию 0-0.5 сек, рандом)
  * @param {string} options.ease - Тип easing (по умолчанию "sine.inOut")
  * @returns {gsap.core.Tween} GSAP анимация
@@ -15,15 +15,12 @@ import gsap from "gsap";
 export function createFloatAnimation(element, options = {}) {
   const {
     duration = Math.round(2 + Math.random() * 2.5), // 2-4 сек
-    xOffset = Math.round(3 + Math.random() * 5), // 3-8px
-    yOffset = Math.round(5 + Math.random() * 10), // 5-15px
-    zOffset = Math.round(Math.random() * 5), // 0-5px
+    xOffset = Math.round((Math.random() - 0.5) * 10), // -5 до 5px
+    yOffset = Math.round((Math.random() - 0.5) * 20), // -10 до 10px
+    zOffset = Math.round((Math.random() - 0.5) * 10), // -5 до 5px
     delay = Math.round(Math.random()* 2), // 0-1 сек (целое число)
     ease = "power1.inOut",
   } = options;
-
-  const directionX = Math.random() > 0.5 ? 1 : -1;
-  const directionZ = Math.random() > 0.5 ? 1 : -1;
 
   // Округляем все значения до целых чисел
   const roundedXOffset = Math.round(xOffset);
@@ -33,9 +30,9 @@ export function createFloatAnimation(element, options = {}) {
   const roundedDelay = Math.round(delay);
 
   return gsap.to(element, {
-    x: roundedXOffset * directionX,
-    y: -roundedYOffset,
-    z: roundedZOffset * directionZ,
+    x: roundedXOffset,
+    y: roundedYOffset,
+    z: roundedZOffset,
     duration: roundedDuration,
     ease: ease,
     repeat: -1,
