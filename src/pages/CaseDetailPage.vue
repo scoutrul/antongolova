@@ -1,5 +1,5 @@
 <template>
-  <PageLayout @header-nav-case-scroll="handleNavCaseScroll" bg="white">
+  <PageLayout bg="white">
     <!-- Hero Section -->
     <CaseHero
       :title="caseData.hero.title"
@@ -23,7 +23,7 @@
 
       <!-- Cases Section -->
       <CasesSection
-        id="cases-section"
+        :id="sectionAnchors.cases.section"
         :title="casesContent.title"
         :subtitle="casesContent.subtitle"
         :cases="allCases"
@@ -33,7 +33,7 @@
 </template>
 
 <script setup>
-import { computed, watch, onMounted } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 import PageLayout from "@/layouts/PageLayout.vue";
 import CaseHero from "@/components/case/CaseHero.vue";
@@ -41,12 +41,12 @@ import CaseOverview from "@/components/case/CaseOverview.vue";
 import CaseBody from "@/components/case/CaseBody.vue";
 import CasesSection from "@/components/sections/CasesSection.vue";
 import { useCasesStore, useContentStore } from "@/stores";
-import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
+import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
 
+const sectionAnchors = SECTION_ANCHORS;
 const route = useRoute();
 const casesStore = useCasesStore();
 const contentStore = useContentStore();
-const { scrollToElement } = useSmoothScroll();
 
 const slug = computed(() => route.params.slug);
 
@@ -58,36 +58,6 @@ const casesContent = computed(() => contentStore.currentData?.cases || {});
 
 // Получаем список всех кейсов из контента
 const allCases = computed(() => casesContent.value.items || []);
-
-// Функция для обновления title документа
-const updateDocumentTitle = () => {
-  if (caseData.value?.hero?.title) {
-    document.title = caseData.value.hero.title;
-  }
-};
-
-// Устанавливаем title при монтировании
-onMounted(() => {
-  updateDocumentTitle();
-});
-
-// Обновляем title при смене кейса
-watch(
-  () => slug.value,
-  () => {
-    updateDocumentTitle();
-  }
-);
-
-// Обработка скролла к секции кейсов
-const handleNavCaseScroll = () => {
-  const element = document.getElementById("cases-section");
-  scrollToElement(element, {
-    offset: 0,
-    overshoot: 30,
-    duration: 1,
-  });
-};
 </script>
 
 <style scoped></style>

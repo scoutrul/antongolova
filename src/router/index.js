@@ -1,5 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useLanguageStore } from "@/stores/language";
+import { useSmoothScroll } from "@/composables/useSmoothScroll";
+import { SECTION_ANCHORS } from "@/constants/sectionAnchors";
+
+const HOME_ROUTE_NAMES = new Set(["Home", "HomeRu", "HomeEn"]);
+const { scrollToElement } = useSmoothScroll();
 
 const routes = [
   {
@@ -56,10 +61,20 @@ const router = createRouter({
       setTimeout(() => {
         if (savedPosition) {
           resolve(savedPosition);
-        } else {
-          resolve({ top: 0, behavior: "instant" });
+          return;
         }
-      }, 300); // Задержка соответствует длительности fade-in анимации
+
+        if (HOME_ROUTE_NAMES.has(to.name)) {
+          const target = document.getElementById(SECTION_ANCHORS.cases.section);
+          if (target) {
+            scrollToElement(target, { duration: 0 });
+            resolve(false);
+            return;
+          }
+        }
+
+        resolve({ top: 0, behavior: "instant" });
+      }, 50); // Задержка соответствует длительности fade-in анимации
     });
   },
 });

@@ -7,18 +7,6 @@
       "title": "AG1",
       "description": "Как повысить средний чек в Health Nutririon по подписке",
       "image": "/assets/images/case-bg-1.png"
-    },
-    {
-      "slug": "adguard-mail",
-      "title": "AdGuard Mail",
-      "description": "Как мы создали почтовый сервис нового поколения",
-      "image": "/assets/images/case-bg-2.png"
-    },
-    {
-      "slug": "legaline",
-      "title": "Legaline",
-      "description": "Как мы запустили юридическую eCommerce-платформу в ОАЭ",
-      "image": "/assets/images/case-bg-3.png"
     }
   ]
 }

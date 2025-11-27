@@ -1,10 +1,10 @@
 <template>
   <div class="relative min-h-screen z-20">
     <StickyHeader
-      v-if="props.headerTheme === 'dark' && router.path !== '/'"
+      v-if="props.headerTheme === 'dark' || router.path !== '/'"
       v-bind="headerProps"
       @cta-click="handleCtaClick"
-      @nav-case-scroll="$emit('header-nav-case-scroll')"
+      @nav-case-scroll="handleNavCaseScroll"
       @language-change="handleLanguageChange"
     />
 
@@ -20,9 +20,12 @@ import StickyHeader from "@/components/sections/StickyHeader.vue";
 import BenefitsSection from "@/components/sections/BenefitsSection.vue";
 import { useLanguageStore, useContentStore } from "@/stores";
 import { useRouter } from "vue-router";
-
+import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
+import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
 const router = useRouter();
 
+const { scrollToElement } = useSmoothScroll();
+const sectionAnchors = SECTION_ANCHORS;
 const languageStore = useLanguageStore();
 const contentStore = useContentStore();
 
@@ -74,6 +77,15 @@ const handleCtaClick = () => {
 function handleLanguageChange(code) {
   languageStore.setLanguage(code);
 }
+
+const handleNavCaseScroll = () => {
+  const element = document.getElementById(sectionAnchors.cases.section);
+  scrollToElement(element, {
+    offset: 0,
+    overshoot: 30,
+    duration: 1,
+  });
+};
 </script>
 
 <style scoped></style>

@@ -9,7 +9,6 @@
         'aria-labelledby': sectionAnchors.benefits.heading,
         headingId: sectionAnchors.benefits.heading,
       }"
-      @header-nav-case-scroll="handleNavCaseScroll"
     >
       <!-- Tools (Dark) -->
       <ToolsSection
@@ -58,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onBeforeUnmount } from "vue";
 import PageLayout from "@/layouts/PageLayout.vue";
 import ToolsSection from "@/components/sections/ToolsSection.vue";
 import CasesSection from "@/components/sections/CasesSection.vue";
@@ -69,7 +68,6 @@ import { useSectionThemeTracking } from "@/composables/useSectionThemeTracking.j
 import { useContentStore } from "@/stores";
 import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
 import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
-import { onBeforeMount } from "vue";
 
 const { scrollToElement } = useSmoothScroll();
 const contentStore = useContentStore();
@@ -93,15 +91,9 @@ const { headerTheme } = useSectionThemeTracking({
   howWeWorkSectionRef,
 });
 
-// Обработка скролла к секции кейсов
-const handleNavCaseScroll = () => {
+onBeforeUnmount(() => {
   const element = document.getElementById(sectionAnchors.cases.section);
-  scrollToElement(element);
-};
-
-onBeforeMount(() => {
-  const element = document.getElementById(sectionAnchors.cases.section);
-  scrollToElement(element, { duration: 0, offset: -100 });
+  scrollToElement(element, { duration: 0 });
 });
 </script>
 
