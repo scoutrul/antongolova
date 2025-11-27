@@ -20,7 +20,7 @@
       >
         {{ item.value }}
       </BaseText>
-      <BaseText :as="'div'" :size="labelSize" class="text-black-50 transform-none">
+      <BaseText :as="'div'" :size="labelSize" class="text-black-50">
         {{ item.label }}
       </BaseText>
     </div>

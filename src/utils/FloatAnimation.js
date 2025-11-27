@@ -14,23 +14,38 @@ import gsap from "gsap";
  */
 export function createFloatAnimation(element, options = {}) {
   const {
-    duration = 2 + Math.random() * 1.5, // 2-3.5 сек
-    xOffset = 3 + Math.random() * 5, // 3-8px
-    yOffset = 5 + Math.random() * 10, // 5-15px
-    zOffset = Math.random() * 5, // 0-5px
-    delay = Math.random() * 0.5, // 0-0.5 сек
-    ease = "sine.inOut",
+    duration = Math.round(2 + Math.random() * 2.5), // 2-4 сек
+    xOffset = Math.round(3 + Math.random() * 5), // 3-8px
+    yOffset = Math.round(5 + Math.random() * 10), // 5-15px
+    zOffset = Math.round(Math.random() * 5), // 0-5px
+    delay = Math.round(Math.random()* 2), // 0-1 сек (целое число)
+    ease = "power1.inOut",
   } = options;
 
+  const directionX = Math.random() > 0.5 ? 1 : -1;
+  const directionZ = Math.random() > 0.5 ? 1 : -1;
+
+  // Округляем все значения до целых чисел
+  const roundedXOffset = Math.round(xOffset);
+  const roundedYOffset = Math.round(yOffset);
+  const roundedZOffset = Math.round(zOffset);
+  const roundedDuration = Math.round(duration);
+  const roundedDelay = Math.round(delay);
+
   return gsap.to(element, {
-    x: xOffset * (Math.random() > 0.5 ? 1 : -1), // Случайное направление
-    y: -yOffset,
-    z: zOffset * (Math.random() > 0.5 ? 1 : -1), // Случайное направление
-    duration: duration,
+    x: roundedXOffset * directionX,
+    y: -roundedYOffset,
+    z: roundedZOffset * directionZ,
+    duration: roundedDuration,
     ease: ease,
     repeat: -1,
     yoyo: true,
-    delay: delay,
+    delay: roundedDelay,
+    snap: {
+      x: 0.1,
+      y: 0.1,
+      z: 0.1,
+    },
   });
 }
 
