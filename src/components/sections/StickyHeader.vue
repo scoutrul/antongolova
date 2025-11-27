@@ -24,7 +24,7 @@
 
         <div class="hidden xl:flex items-center gap-6">
           <p
-            class="text-p2 whitespace-nowrap text-primary"
+            class="text-p2 whitespace-nowrap"
             :class="sloganColorClass"
             ref="sloganRef"
           >
@@ -45,7 +45,7 @@
           >
             <a
               :href="getNavHref(item)"
-              class="text-p2 text-primary transition-colors whitespace-nowrap"
+              class="text-p2 transition-colors whitespace-nowrap"
               :class="navLinkColorClass"
               :target="item.type === 'download' ? '_blank' : undefined"
               :rel="

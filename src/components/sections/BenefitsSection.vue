@@ -5,7 +5,6 @@
     bg="black"
     class="relative overflow-hidden"
   >
-    <NeuralBg class="opacity-80" />
     <DecorativeLine
       :pin-count="0"
       class="hidden lg:block !absolute top-0 left-1/2 transform -translate-x-1/2"
@@ -60,7 +59,6 @@ import { BaseContainer, BaseHeading } from "@/components/base";
 import BenefitCard from "@/components/ui/BenefitCard.vue";
 import DecorativeLine from "@/components/ui/DecorativeLine.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
-import NeuralBg from "@/components/ui/bg/NeuralBg.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtXl, ltXl, ltLg } = useBreakpoints();

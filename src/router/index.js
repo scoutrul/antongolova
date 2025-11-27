@@ -12,15 +12,13 @@ const routes = [
     name: "Home",
     component: () => import("../pages/HomePage.vue"),
     beforeEnter: (to, from, next) => {
-      const getBrowserLanguage = () => {
-        const browserLang = navigator.language || navigator.userLanguage;
-        return browserLang.toLowerCase().startsWith("ru") ? "ru" : "en";
-      };
-
       const savedLang = localStorage.getItem("language");
-      const lang = getBrowserLanguage() || savedLang;
-      const langStore = useLanguageStore();
-      langStore.setLanguage(lang);
+      if (!savedLang) {
+        const browserLang = navigator.language || navigator.userLanguage;
+        const lang = browserLang.toLowerCase().startsWith("ru") ? "ru" : "en";
+        const langStore = useLanguageStore();
+        langStore.setLanguage(lang);
+      }
       next();
     },
   },

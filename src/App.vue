@@ -59,9 +59,15 @@ const updateDocumentMeta = () => {
   }
 };
 
+const updateDocumentLang = () => {
+  const lang = languageStore.currentLanguage === "en" ? "en" : "ru";
+  document.documentElement.setAttribute("lang", lang);
+};
+
 // Устанавливаем title при монтировании
 onMounted(() => {
   updateDocumentMeta();
+  updateDocumentLang();
 });
 
 // Обновляем title при смене языка
@@ -69,6 +75,7 @@ watch(
   () => languageStore.currentLanguage,
   () => {
     updateDocumentMeta();
+    updateDocumentLang();
   }
 );
 

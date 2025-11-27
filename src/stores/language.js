@@ -3,7 +3,11 @@ import { ref, computed } from "vue";
 
 export const useLanguageStore = defineStore("language", () => {
   // State
-  const currentLanguage = ref(localStorage.getItem("language") || "ru");
+  const storedLanguage = localStorage.getItem("language");
+  if (!storedLanguage) {
+    localStorage.setItem("language", "ru");
+  }
+  const currentLanguage = ref(storedLanguage || "ru");
 
   // Getters
   const isRussian = computed(() => currentLanguage.value === "ru");

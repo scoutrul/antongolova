@@ -57,7 +57,7 @@ export const useContentStore = defineStore("content", () => {
 
   // Getters
   const currentData = computed(() => {
-    return languageStore.currentLanguage === "en" ? dataEn.value : dataRu.value;
+    return languageStore.currentLanguage === "ru" ? dataRu.value : dataEn.value;
   });
 
   // Секции для удобного доступа

@@ -17,8 +17,8 @@
     }
   ],
   "languages": [
-    { "code": "en", "label": "English" },
-    { "code": "ru", "label": "Русский" }
+    { "code": "ru", "label": "Русский" },
+    { "code": "en", "label": "English" }
   ],
   "currentLanguage": "en"
 }
