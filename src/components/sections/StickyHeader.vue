@@ -23,8 +23,11 @@
         </div>
 
         <div class="hidden xl:flex items-center gap-6">
-          <p class="text-p2 whitespace-nowrap" :class="sloganColorClass">
-            {{ slogan }}
+          <p
+            class="text-p2 whitespace-nowrap text-primary"
+            :class="sloganColorClass"
+          >
+            {{ slogan }} {{ theme }}
           </p>
         </div>
       </div>
@@ -41,7 +44,7 @@
           >
             <a
               :href="getNavHref(item)"
-              class="text-p2 hover:text-primary transition-colors whitespace-nowrap"
+              class="text-p2 text-primary transition-colors whitespace-nowrap"
               :class="navLinkColorClass"
               :target="item.type === 'download' ? '_blank' : undefined"
               :rel="
@@ -57,7 +60,7 @@
 
       <div class="flex items-center gap-6">
         <div class="hidden lg:block">
-          <LanguageDropdown
+          <LanguageToggle
             :theme="theme"
             :languages="languages"
             :model-value="currentLanguage"
@@ -76,7 +79,7 @@ import { computed, ref, onMounted, onUnmounted } from "vue";
 import { useRouter } from "vue-router";
 import BaseContainer from "@/components/base/BaseContainer.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
-import LanguageDropdown from "@/components/ui/LanguageDropdown.vue";
+import LanguageToggle from "@/components/ui/LanguageToggle.vue";
 const logoMark = "/assets/icons/logo-mark.svg";
 
 const router = useRouter();
@@ -92,7 +95,7 @@ const props = defineProps({
   },
   theme: {
     type: String,
-    default: "dark",
+    default: "light",
     validator: (value) => ["light", "dark"].includes(value),
   },
   languages: {

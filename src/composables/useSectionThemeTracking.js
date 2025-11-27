@@ -1,13 +1,15 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { watch } from "vue";
+import { useRoute } from "vue-router";
 /**
  * Композбл для отслеживания тем секций и управления темой хедера
  * @param {Object} sectionRefs - Объект с refs всех секций
  * @returns {Object} - { isScrolled, headerTheme }
  */
 export function useSectionThemeTracking(sectionRefs) {
+  const route = useRoute();
   // Состояние скролла для хедера
   const isScrolled = ref(false);
 
@@ -18,7 +20,6 @@ export function useSectionThemeTracking(sectionRefs) {
   const sectionThemes = {
     tools: "dark",
     cases: "light",
-    faq: "light",
   };
 
   // Отслеживание скролла
@@ -34,7 +35,6 @@ export function useSectionThemeTracking(sectionRefs) {
     const sections = [
       { ref: sectionRefs.toolsSectionRef, key: "tools" },
       { ref: sectionRefs.casesSectionRef, key: "cases" },
-      { ref: sectionRefs.faqSectionRef, key: "faq" },
     ];
 
     sections.forEach(({ ref, key }) => {
@@ -45,6 +45,7 @@ export function useSectionThemeTracking(sectionRefs) {
 
       if (!ref.value) {
         console.warn(`Section ref for ${key} is not available`);
+        debugger;
         return;
       }
 
@@ -59,7 +60,7 @@ export function useSectionThemeTracking(sectionRefs) {
 
       ScrollTrigger.create({
         trigger: sectionElement,
-        start: "top top", // Когда верх секции касается верха экрана
+        start: "top 180", // Когда верх секции касается верха экрана
         end: "bottom top", // Когда низ секции касается верха экрана
         onEnter: () => {
           // Секция входит в верх экрана
@@ -72,12 +73,19 @@ export function useSectionThemeTracking(sectionRefs) {
           const sectionTheme = sectionThemes[key];
           headerTheme.value = sectionTheme === "dark" ? "dark" : "light";
         },
+        onRefresh: () => {
+          // Секция входит в верх экрана
+          const sectionTheme = sectionThemes[key];
+          // Header должен быть противоположным теме секции
+          headerTheme.value = sectionTheme === "dark" ? "dark" : "light";
+        },
       });
     });
   };
 
+  gsap.registerPlugin(ScrollTrigger);
+
   onMounted(async () => {
-    gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("scroll", handleScroll);
 
     await nextTick();

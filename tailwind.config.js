@@ -25,7 +25,7 @@ module.exports = {
           80: "#dedede",
           90: "#f6f6f5",
           100: "#ffffff",
-          "90-alpha": "#d0d46b1a",
+          "90-alpha": "#ffffff1a",
         },
       },
       fontFamily: {

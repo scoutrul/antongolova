@@ -1,5 +1,5 @@
 <template>
-  <PageLayout bg="white">
+  <PageLayout bg="white" header-theme="light">
     <!-- Hero Section -->
     <CaseHero
       :title="caseData.hero.title"

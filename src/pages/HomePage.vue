@@ -57,7 +57,7 @@
 </template>
 
 <script setup>
-import { ref, computed, onBeforeUnmount } from "vue";
+import { ref, computed } from "vue";
 import PageLayout from "@/layouts/PageLayout.vue";
 import ToolsSection from "@/components/sections/ToolsSection.vue";
 import CasesSection from "@/components/sections/CasesSection.vue";
@@ -66,10 +66,8 @@ import HowWeWorkSection from "@/components/sections/HowWeWorkSection.vue";
 
 import { useSectionThemeTracking } from "@/composables/useSectionThemeTracking.js";
 import { useContentStore } from "@/stores";
-import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
 import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
 
-const { scrollToElement } = useSmoothScroll();
 const contentStore = useContentStore();
 
 // Получаем данные из store
@@ -81,19 +79,11 @@ const sectionAnchors = SECTION_ANCHORS;
 // Refs для секций
 const toolsSectionRef = ref(null);
 const casesSectionRef = ref(null);
-const faqSectionRef = ref(null);
-const howWeWorkSectionRef = ref(null);
+
 // Используем композбл для отслеживания тем секций
 const { headerTheme } = useSectionThemeTracking({
   toolsSectionRef,
   casesSectionRef,
-  faqSectionRef,
-  howWeWorkSectionRef,
-});
-
-onBeforeUnmount(() => {
-  const element = document.getElementById(sectionAnchors.cases.section);
-  scrollToElement(element, { duration: 0 });
 });
 </script>
 

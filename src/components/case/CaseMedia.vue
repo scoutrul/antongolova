@@ -34,7 +34,6 @@
   <div
     v-else
     class="media-container bg-white-90 rounded-[16px] overflow-hidden"
-    :class="containerClass"
   >
     <!-- Видео -->
     <video

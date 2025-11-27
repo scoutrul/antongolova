@@ -1,11 +1,11 @@
 <template>
   <div class="relative min-h-screen z-20">
     <StickyHeader
-      v-if="props.headerTheme === 'dark' || router.path !== '/'"
       v-bind="headerProps"
       @cta-click="handleCtaClick"
       @nav-case-scroll="handleNavCaseScroll"
       @language-change="handleLanguageChange"
+      v-show="showHeader"
     />
 
     <slot />
@@ -19,11 +19,11 @@ import { computed } from "vue";
 import StickyHeader from "@/components/sections/StickyHeader.vue";
 import BenefitsSection from "@/components/sections/BenefitsSection.vue";
 import { useLanguageStore, useContentStore } from "@/stores";
-import { useRouter } from "vue-router";
 import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
 import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
-const router = useRouter();
+import { useRoute } from "vue-router";
 
+const route = useRoute();
 const { scrollToElement } = useSmoothScroll();
 const sectionAnchors = SECTION_ANCHORS;
 const languageStore = useLanguageStore();
@@ -33,7 +33,7 @@ const props = defineProps({
   // Header props
   headerTheme: {
     type: String,
-    default: "light",
+    default: "dark",
     validator: (value) => ["light", "dark"].includes(value),
   },
   bg: {
@@ -56,7 +56,7 @@ const headerProps = computed(() => ({
   navigationItems: contentStore.header.navigationItems,
   languages: contentStore.header.languages,
   currentLanguage: languageStore.currentLanguage,
-  theme: props.headerTheme,
+  theme: route.name === "CaseDetail" ? "light" : props.headerTheme,
   buttonText: "",
 }));
 
@@ -86,6 +86,10 @@ const handleNavCaseScroll = () => {
     duration: 1,
   });
 };
+
+const showHeader = computed(() => {
+  return route.name === "CaseDetail" || props.headerTheme === "dark";
+});
 </script>
 
 <style scoped></style>
