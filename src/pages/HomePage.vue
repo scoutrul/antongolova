@@ -36,6 +36,7 @@
 
       <!-- FAQ Секция (Lazy) -->
       <FaqSection
+        ref="faqSectionRef"
         :id="sectionAnchors.faq.section"
         :aria-labelledby="sectionAnchors.faq.heading"
         :heading-id="sectionAnchors.faq.heading"
@@ -51,11 +52,11 @@ import { ref, computed } from "vue";
 import PageLayout from "@/layouts/PageLayout.vue";
 import ToolsSection from "@/components/sections/ToolsSection.vue";
 import CasesSection from "@/components/sections/CasesSection.vue";
+import FaqSection from "@/components/sections/FaqSection.vue";
 
 import { useSectionThemeTracking } from "@/composables/useSectionThemeTracking.js";
 import { useContentStore } from "@/stores";
 import { useSmoothScroll } from "@/composables/useSmoothScroll.js";
-import { useHeroFadeAnimation } from "@/composables/useHeroFadeAnimation.js";
 import { SECTION_ANCHORS } from "@/constants/sectionAnchors.js";
 import { onBeforeMount } from "vue";
 
@@ -69,20 +70,15 @@ const content = computed(() => contentStore.currentData);
 const sectionAnchors = SECTION_ANCHORS;
 
 // Refs для секций
-const heroSectionRef = ref(null);
 const toolsSectionRef = ref(null);
 const casesSectionRef = ref(null);
-const howWeWorkSectionRef = ref(null);
-
-// Применяем fade анимацию к hero секции
-useHeroFadeAnimation(heroSectionRef);
+const faqSectionRef = ref(null);
 
 // Используем композбл для отслеживания тем секций
 const { headerTheme } = useSectionThemeTracking({
-  heroSectionRef,
   toolsSectionRef,
   casesSectionRef,
-  howWeWorkSectionRef,
+  faqSectionRef,
 });
 
 // Обработка скролла к секции кейсов

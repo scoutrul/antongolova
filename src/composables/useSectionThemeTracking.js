@@ -1,4 +1,5 @@
 import { ref, onMounted, onUnmounted, nextTick } from "vue";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 /**
@@ -10,15 +11,14 @@ export function useSectionThemeTracking(sectionRefs) {
   // Состояние скролла для хедера
   const isScrolled = ref(false);
 
-  // Тема хедера (по умолчанию темная, так как первая секция Hero темная)
   const headerTheme = ref("dark");
 
   // Определение темы секции (темная = 'dark', светлая = 'light')
   // Header должен быть противоположным теме секции
   const sectionThemes = {
-    hero: "dark", // bg-black-90 -> Header должен быть dark
-    tools: "dark", // bg-black-90 -> Header должен быть dark
-    cases: "light", // bg-white-90 -> Header должен быть dark
+    tools: "dark",
+    cases: "light",
+    faq: "light",
   };
 
   // Отслеживание скролла
@@ -32,9 +32,9 @@ export function useSectionThemeTracking(sectionRefs) {
   // Инициализация ScrollTrigger для отслеживания секций
   const initSectionThemeTracking = () => {
     const sections = [
-      { ref: sectionRefs.heroSectionRef, key: "hero" },
       { ref: sectionRefs.toolsSectionRef, key: "tools" },
       { ref: sectionRefs.casesSectionRef, key: "cases" },
+      { ref: sectionRefs.faqSectionRef, key: "faq" },
     ];
 
     sections.forEach(({ ref, key }) => {
@@ -72,29 +72,18 @@ export function useSectionThemeTracking(sectionRefs) {
           const sectionTheme = sectionThemes[key];
           headerTheme.value = sectionTheme === "dark" ? "dark" : "light";
         },
-        onLeave: () => {
-          // Секция покидает верх экрана (скроллим вниз)
-          // Не меняем тему, так как следующая секция уже активирована
-        },
-        onLeaveBack: () => {
-          // Секция покидает верх экрана (скроллим вверх)
-          // Не меняем тему, так как предыдущая секция уже активирована
-        },
       });
     });
   };
 
   onMounted(async () => {
+    gsap.registerPlugin(ScrollTrigger);
     window.addEventListener("scroll", handleScroll);
 
     await nextTick();
 
     // Инициализируем отслеживание тем секций
     initSectionThemeTracking();
-
-    // Устанавливаем начальную тему на основе первой секции (Hero)
-    // Hero темная, поэтому Header должен быть темным
-    headerTheme.value = sectionThemes.hero === "dark" ? "dark" : "light";
 
     // Обновляем ScrollTrigger после инициализации
     ScrollTrigger.refresh();
