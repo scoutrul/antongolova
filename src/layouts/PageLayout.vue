@@ -5,7 +5,7 @@
       @cta-click="handleCtaClick"
       @nav-case-scroll="handleNavCaseScroll"
       @language-change="handleLanguageChange"
-      v-show="showHeader"
+      v-if="showHeader"
     />
 
     <slot />
@@ -52,7 +52,9 @@ const emit = defineEmits(["header-nav-case-scroll"]);
 
 // Собираем props для хедера из store
 const headerProps = computed(() => ({
-  slogan: contentStore.header.slogan,
+  slogans:
+    contentStore.header.slogans ||
+    (contentStore.header.slogan ? [contentStore.header.slogan] : []),
   navigationItems: contentStore.header.navigationItems,
   languages: contentStore.header.languages,
   currentLanguage: languageStore.currentLanguage,

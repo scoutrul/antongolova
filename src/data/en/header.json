@@ -1,5 +1,9 @@
 {
-  "slogan": "Growing together",
+  "slogans": [
+    "Growing together",
+    "Shipping frontend that moves metrics",
+    "Make product faster"
+  ],
   "navigationItems": [
     {
       "text": "View cases",

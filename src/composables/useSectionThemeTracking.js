@@ -45,7 +45,6 @@ export function useSectionThemeTracking(sectionRefs) {
 
       if (!ref.value) {
         console.warn(`Section ref for ${key} is not available`);
-        debugger;
         return;
       }
 

@@ -26,8 +26,9 @@
           <p
             class="text-p2 whitespace-nowrap text-primary"
             :class="sloganColorClass"
+            ref="sloganRef"
           >
-            {{ slogan }} {{ theme }}
+            {{ currentSlogan }}
           </p>
         </div>
       </div>
@@ -75,19 +76,20 @@
 </template>
 
 <script setup>
-import { computed, ref, onMounted, onUnmounted } from "vue";
+import { computed, ref, onMounted, onUnmounted, watch, nextTick } from "vue";
 import { useRouter } from "vue-router";
 import BaseContainer from "@/components/base/BaseContainer.vue";
 import ContactButton from "@/components/ui/ContactButton.vue";
 import LanguageToggle from "@/components/ui/LanguageToggle.vue";
+import { createScrambleTextAnimation } from "@/utils/gsapAnimations.js";
 const logoMark = "/assets/icons/logo-mark.svg";
 
 const router = useRouter();
 
 const props = defineProps({
-  slogan: {
-    type: String,
-    default: "",
+  slogans: {
+    type: Array,
+    default: () => [],
   },
   navigationItems: {
     type: Array,
@@ -116,22 +118,75 @@ const emit = defineEmits(["cta-click", "nav-case-scroll", "language-change"]);
 
 // Внутреннее состояние для отслеживания скролла
 const isScrolled = ref(false);
+const sloganRef = ref(null);
+const sloganIndex = ref(0);
+
+const ROTATION_DELAY = 4500;
+let rotationTimer = null;
+let isMountedClient = false;
+
+const availableSlogans = computed(() => {
+  if (!Array.isArray(props.slogans)) return [];
+  return props.slogans.filter((item) => Boolean(item?.length));
+});
+
+const currentSlogan = computed(() => {
+  return availableSlogans.value[sloganIndex.value] || "";
+});
 
 // Обработчик скролла
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
 };
 
+const stopSloganRotation = () => {
+  if (!rotationTimer) return;
+  clearInterval(rotationTimer);
+  rotationTimer = null;
+};
+
+const startSloganRotation = () => {
+  stopSloganRotation();
+  if (availableSlogans.value.length <= 1) return;
+
+  rotationTimer = window.setInterval(() => {
+    sloganIndex.value = (sloganIndex.value + 1) % availableSlogans.value.length;
+  }, ROTATION_DELAY);
+};
+
+const animateSlogan = async (text) => {
+  if (!isMountedClient || !sloganRef.value || !text) return;
+  await nextTick();
+  createScrambleTextAnimation(sloganRef.value, text, {
+    triggerStart: "top 90%",
+    duration: 2,
+    speed: 0.4,
+  });
+};
+
 // Добавляем слушатель при монтировании
-onMounted(() => {
+onMounted(async () => {
+  isMountedClient = true;
   window.addEventListener("scroll", handleScroll);
   // Проверяем начальное положение
   handleScroll();
+
+  await nextTick();
+  animateSlogan(currentSlogan.value);
+  startSloganRotation();
+});
+
+watch(currentSlogan, (newValue, oldValue) => {
+  if (!isMountedClient) return;
+  if (!newValue || newValue === oldValue) return;
+  animateSlogan(newValue);
 });
 
 // Удаляем слушатель при размонтировании
 onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
+  stopSloganRotation();
+  isMountedClient = false;
 });
 
 const isDark = computed(() => props.theme === "dark");
