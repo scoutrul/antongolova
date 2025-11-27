@@ -11,14 +11,13 @@
       :class="[gtXl ? 'min-h-[505px] justify-between' : 'gap-16']"
     >
       <!-- Заголовок -->
-      <div>
-        <BaseHeading :level="gtXl ? 3 : 4" :as="'h1'" class="text-black-90">
-          {{ title }} {{ headerNoWrap }}
-        </BaseHeading>
-      </div>
 
+      <BaseHeading :level="gtXl ? 3 : 4" :as="'h1'" class="text-black-90">
+        {{ title }}
+      </BaseHeading>
+    
       <!-- Статистики -->
-      <div class="grid gap-8 grid-cols-2">
+      <div  class="grid gap-8 grid-cols-2">
         <div
           v-for="(stat, index) in stats"
           :key="index"
@@ -33,7 +32,11 @@
         </div>
       </div>
     </div>
-    <CaseMetaList :items="metaItems" :header-no-wrap="headerNoWrap" />
+    <CaseMetaList
+      :items="metaItems"
+      :header-no-wrap="headerNoWrap"
+      :is-floating="isFloating"
+    />
   </div>
 </template>
 
@@ -44,7 +47,7 @@ import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtXl } = useBreakpoints();
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     required: true,
@@ -65,5 +68,10 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  isFloating: {
+    type: Boolean,
+    default: false,
+  },
 });
+
 </script>

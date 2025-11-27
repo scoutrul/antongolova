@@ -7,6 +7,7 @@
     <NeuralBg theme="light" />
     <!-- Fixed блок -->
     <CaseHeroContent
+      is-floating
       ref="fixedHero"
       :title="title"
       :stats="stats"
@@ -21,7 +22,7 @@
       :stats="stats"
       :meta-items="metaItems"
       header-no-wrap
-      container-classes="relative z-9 lg:opacity-0 pointer-events-none"
+      container-classes="relative z-9 opacity-0 pointer-events-none"
     />
   </BaseContainer>
 </template>
