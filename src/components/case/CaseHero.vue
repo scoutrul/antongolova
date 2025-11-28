@@ -4,7 +4,7 @@
     bg="white"
     class="case-hero pt-[128px] md:pt-[160px] xl:pt-[200px] !pb-16 md:!pb-24 xl:!pb-16"
   >
-    <NeuralBg theme="light" />
+    <NeuralBg theme="light" :color="'#2F7D39'" />
     <!-- Fixed блок -->
     <CaseHeroContent
       is-floating
