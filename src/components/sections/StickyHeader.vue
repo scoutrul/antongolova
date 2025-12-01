@@ -199,18 +199,6 @@ const navContainerClasses = computed(() => {
   return isDark.value ? "bg-black-90/10" : "bg-white-100/10";
 });
 
-// Классы для размера лого
-const logoSizeClasses = computed(() => {
-  return "h-[34px] w-[35px] md:h-[34px] md:w-[35px] lg:h-10 lg:w-[41px]";
-});
-
-// Классы для цвета лого (через фильтр)
-const logoColorClass = computed(() => {
-  return isDark.value
-    ? "brightness-0 invert" // Белый лого для темной темы
-    : "opacity-90 invert"; // Черный лого для светлой темы
-});
-
 // Классы для цвета слогана
 const sloganColorClass = computed(() => {
   return isDark.value
@@ -218,21 +206,9 @@ const sloganColorClass = computed(() => {
     : "text-black-50"; // #5c5c5c для светлой темы
 });
 
-// Классы для ссылок навигации
-const navLinkColorClass = computed(() => {
-  return isDark.value
-    ? "text-white-90" // #f6f6f5 для темной темы
-    : "text-black-90"; // #161616 для светлой темы
-});
-
 // Обработчик для дропдауна языка
 const handleLanguageChange = (code) => {
   emit("language-change", code);
-};
-
-// Переход на главную страницу
-const goToHome = () => {
-  router.push({ name: "Home" });
 };
 
 // Получить href для навигационной ссылки

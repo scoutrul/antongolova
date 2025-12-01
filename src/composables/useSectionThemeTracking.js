@@ -58,7 +58,7 @@ export function useSectionThemeTracking(sectionRefs) {
 
       ScrollTrigger.create({
         trigger: sectionElement,
-        start: "top top", // Когда верх секции касается верха экрана
+        start: "top 5%", // Когда верх секции касается верха экрана
         end: "bottom bottom", // Когда низ секции касается верха экрана
         onEnter: () => {
           // Секция входит в верх экрана
