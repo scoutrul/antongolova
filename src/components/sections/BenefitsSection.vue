@@ -19,7 +19,7 @@
         <BaseHeading
           :level="4"
           :as="'h2'"
-          class="w-full text-white-90 text-[46px] leading-[1.2] sm:text-[64px] sm:leading-none mb-[90px]"
+          class="w-full text-white-90 text-[46px] leading-[1.2] sm:text-[64px] sm:leading-none mb-[26px]"
           :style="{ maxWidth: ltXl ? '430px' : 'inherit' }"
           :id="headingId || undefined"
         >
