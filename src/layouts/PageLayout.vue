@@ -73,7 +73,7 @@ const computedFooterProps = computed(() => ({
 
 // Обработчик CTA-клика (единый для всего приложения)
 const handleCtaClick = () => {
-  window.open("http://t.me/meisdigital", "_blank");
+  window.open("http://t.me/antonGolova", "_blank");
 };
 
 // Обработчик смены языка

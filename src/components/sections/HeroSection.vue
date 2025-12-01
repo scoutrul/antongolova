@@ -143,6 +143,6 @@ watch([() => languageStore.currentLanguage, currentBreakpoint], async () => {
 
 // Обработка клика по CTA
 const handleCtaClick = () => {
-  window.open("http://t.me/meisdigital", "_blank");
+  window.open("http://t.me/antonGolova", "_blank");
 };
 </script>
