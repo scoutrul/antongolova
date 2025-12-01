@@ -5,7 +5,7 @@
     class="!fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 !overflow-visible"
   >
     <div
-      class="w-full flex items-center justify-between md:justify-start gap-6 p-3 md:px-6 md:gap-10"
+      class="w-full flex items-center justify-between md:justify-start gap-6 md:gap-10"
       :class="containerClasses"
     >
       <div class="flex items-center gap-6 mr-auto">
