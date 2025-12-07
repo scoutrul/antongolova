@@ -36,7 +36,7 @@
           >
             {{ stat.value }}
           </BaseHeading>
-          <BaseText :as="'p'" :size="gtLg ? 'p1' : 'p2'" class="text-white-50">
+          <BaseText :as="'p'" :size="gtLg ? 'p1' : 'p2'" class="text-white-80">
             {{ stat.description }}
           </BaseText>
         </div>

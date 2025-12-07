@@ -11,6 +11,7 @@
       :items="metaItems"
       :gap="gtSm ? 'gap-6' : 'gap-4'"
       :class="[gtSm ? 'flex-row' : 'flex-col']"
+      theme="light"
     />
 
     <!-- Кнопка "Следующий кейс" -->
