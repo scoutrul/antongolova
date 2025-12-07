@@ -1,10 +1,11 @@
 <template>
-  <PageLayout bg="white" header-theme="light">
+  <PageLayout bg="white" header-theme="dark">
     <!-- Hero Section -->
     <CaseHero
       :title="caseData.hero.title"
       :stats="caseData.hero.stats"
       :meta-items="caseData.meta.items"
+      :work-done="caseData.meta.workDone"
     />
 
     <div class="relative z-10">
@@ -18,6 +19,7 @@
       <CaseBody
         :sections="caseData.body.sections"
         :meta-items="caseData.meta.items"
+        :work-done="caseData.meta.workDone"
         :next-case="caseData.nextCase"
       />
 

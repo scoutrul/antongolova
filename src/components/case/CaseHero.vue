@@ -1,10 +1,10 @@
 <template>
   <BaseContainer
     as="section"
-    bg="white"
+    bg="black"
     class="case-hero pt-[128px] md:pt-[160px] xl:pt-[200px] !pb-16 md:!pb-24 xl:!pb-16"
   >
-    <NeuralBg theme="light" />
+    <NeuralBg theme="dark" />
     <!-- Fixed блок -->
     <CaseHeroContent
       is-floating
@@ -12,6 +12,7 @@
       :title="title"
       :stats="stats"
       :meta-items="metaItems"
+      :work-done="workDone"
       header-no-wrap
       container-classes="case-hero-fixed visible fixed top-[128px] md:top-[160px] xl:top-[200px] left-[16px] right-[16px] md:left-[32px] md:right-[32px] lg:left-[64px] lg:right-[64px] z-0 max-w-[100vw] xl:max-w-[1592px]"
     />
@@ -21,6 +22,7 @@
       :title="title"
       :stats="stats"
       :meta-items="metaItems"
+      :work-done="workDone"
       header-no-wrap
       container-classes="relative z-9 invisible pointer-events-none"
     />
@@ -57,6 +59,10 @@ defineProps({
   metaItems: {
     type: Array,
     default: () => [],
+  },
+  workDone: {
+    type: Object,
+    default: null,
   },
 });
 </script>

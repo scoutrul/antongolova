@@ -1,12 +1,12 @@
 {
   "title": "Кейсы",
-  "subtitle": "Некоторые из моих историй, которые точно не оставят равнодушным",
+  "subtitle": "Некоторые из моих проектов, которые точно не оставят равнодушным",
   "items": [
     {
-      "slug": "ag1",
-      "title": "AG1",
-      "description": "Как повысить средний чек в Health Nutririon по подписке",
-      "image": "/assets/images/case-bg-1.png"
+      "slug": "geovo",
+      "title": "geovo.me",
+      "description": "Личный сайт и блог для дизайнера Егора",
+      "image": "/assets/images/geovo_logo.png"
     }
   ]
 }

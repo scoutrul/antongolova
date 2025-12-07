@@ -12,7 +12,7 @@
     >
       <!-- Заголовок -->
 
-      <BaseHeading :level="gtXl ? 3 : 4" :as="'h1'" class="text-black-90">
+      <BaseHeading :level="gtXl ? 3 : 4" :as="'h1'" class="text-white-100">
         {{ title }}
       </BaseHeading>
     
@@ -23,26 +23,43 @@
           :key="index"
           class="flex flex-col gap-2"
         >
-          <BaseHeading :level="gtLg ? 4 : 5" :as="'div'" class="text-black-90">
+          <BaseHeading 
+            :level="gtLg ? 4 : 5" 
+            :as="stat.url ? 'a' : 'div'" 
+            :href="stat.url"
+            :target="stat.url ? '_blank' : undefined"
+            :rel="stat.url ? 'noopener noreferrer' : undefined"
+            :class="[
+              'text-white-100',
+              stat.url ? 'hover:opacity-80 transition-opacity cursor-pointer' : ''
+            ]"
+          >
             {{ stat.value }}
           </BaseHeading>
-          <BaseText :as="'p'" :size="gtLg ? 'p1' : 'p2'" class="text-black-50">
+          <BaseText :as="'p'" :size="gtLg ? 'p1' : 'p2'" class="text-white-50">
             {{ stat.description }}
           </BaseText>
         </div>
       </div>
     </div>
-    <CaseMetaList
-      :items="metaItems"
-      :header-no-wrap="headerNoWrap"
-      :is-floating="isFloating"
-    />
+    <div
+      class="flex flex-col"
+      :class="[gtXl ? 'xl:max-w-[310px]' : 'w-full', 'gap-16']"
+    >
+      <CaseWorkDone v-if="workDone" :work-done="workDone" />
+      <CaseMetaList
+        :items="metaItems"
+        :header-no-wrap="headerNoWrap"
+        :is-floating="isFloating"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
 import { BaseHeading, BaseText } from "@/components/base/index.js";
 import CaseMetaList from "@/components/case/CaseMetaList.vue";
+import CaseWorkDone from "@/components/case/CaseWorkDone.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg, gtXl } = useBreakpoints();
@@ -59,6 +76,10 @@ const props = defineProps({
   metaItems: {
     type: Array,
     default: () => [],
+  },
+  workDone: {
+    type: Object,
+    default: null,
   },
   containerClasses: {
     type: String,

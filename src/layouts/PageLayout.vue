@@ -59,7 +59,7 @@ const headerProps = computed(() => ({
   navigationItems: contentStore.header.navigationItems,
   languages: contentStore.header.languages,
   currentLanguage: languageStore.currentLanguage,
-  theme: route.name === "CaseDetail" ? "light" : props.headerTheme,
+  theme: props.headerTheme,
   buttonText: "",
 }));
 

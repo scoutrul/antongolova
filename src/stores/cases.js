@@ -3,28 +3,18 @@ import { ref, computed } from "vue";
 import { useLanguageStore } from "./language";
 
 // Импорт полных данных кейсов (русский)
-import caseAg1Ru from "@/data/ru/cases/ag1.json";
+import caseGeovoRu from "@/data/ru/cases/geovo.json";
 
 // Импорт полных данных кейсов (английский)
-import caseAg1En from "@/data/en/cases/ag1.json";
-import caseAdguardWalletEn from "@/data/en/cases/adguard-wallet.json";
-import case4realEn from "@/data/en/cases/4real.json";
-import caseLegalineEn from "@/data/en/cases/legaline.json";
-import caseServeroidEn from "@/data/en/cases/serveroid.json";
-import caseAdguardMailEn from "@/data/en/cases/adguard-mail.json";
+// leter
 
 export const useCasesStore = defineStore("cases", () => {
   const languageStore = useLanguageStore();
 
   // State - загружаем кейсы из отдельных JSON файлов
-  const casesRu = ref([caseAg1Ru]);
+  const casesRu = ref([caseGeovoRu]);
   const casesEn = ref([
-    caseAg1En,
-    caseAdguardWalletEn,
-    case4realEn,
-    caseLegalineEn,
-    caseServeroidEn,
-    caseAdguardMailEn,
+    // leter
   ]);
 
   // Текущие кейсы в зависимости от языка

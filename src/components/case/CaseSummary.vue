@@ -1,6 +1,6 @@
 <template>
   <div
-    class="bg-white-100/80 xl:bg-transparent flex h-full flex-col md:flex-row xl:flex-col gap-4 md:sticky justify-between"
+    class="bg-white-100/80 xl:bg-transparent flex h-full flex-col md:flex-row xl:flex-col xl:max-w-[310px] gap-4 md:sticky justify-between"
     :class="[
       gtXl
         ? 'flex flex-col gap-16 bg-transparent'
@@ -9,8 +9,11 @@
           : 'px-4 py-4',
     ]"
   >
+    <!-- Что я сделал -->
+    <CaseWorkDone v-if="workDone" :work-done="workDone" theme="light" />
+
     <!-- Мета-информация -->
-    <CaseMetaList :items="metaItems" />
+    <CaseMetaList :items="metaItems" theme="light" />
 
     <!-- Кнопка "Следующий кейс" -->
     <BaseButton
@@ -29,6 +32,7 @@ import { computed } from "vue";
 import { useRouter } from "vue-router";
 import { BaseButton } from "@/components/base/index.js";
 import CaseMetaList from "@/components/case/CaseMetaList.vue";
+import CaseWorkDone from "@/components/case/CaseWorkDone.vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 import { useContentStore } from "@/stores";
 
@@ -44,6 +48,10 @@ const props = defineProps({
   metaItems: {
     type: Array,
     required: true,
+  },
+  workDone: {
+    type: Object,
+    default: null,
   },
   nextCase: {
     type: Object,

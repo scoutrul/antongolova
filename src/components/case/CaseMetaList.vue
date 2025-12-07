@@ -11,8 +11,9 @@
       <BaseText
         :as="'div'"
         :size="valueSize"
-        class="text-black-90 transform-none"
         :class="[
+          'transform-none',
+          theme === 'dark' ? 'text-white-100' : 'text-black-90',
           !headerNoWrap
             ? 'whitespace-nowrap xl:whitespace-normal'
             : 'whitespace-normal',
@@ -20,7 +21,11 @@
       >
         {{ item.value }}
       </BaseText>
-      <BaseText :as="'div'" :size="labelSize" class="text-black-50">
+      <BaseText 
+        :as="'div'" 
+        :size="labelSize" 
+        :class="theme === 'dark' ? 'text-white-80' : 'text-black-50'"
+      >
         {{ item.label }}
       </BaseText>
     </div>
@@ -58,6 +63,11 @@ const props = defineProps({
   isFloating: {
     type: Boolean,
     default: false,
+  },
+  theme: {
+    type: String,
+    default: "dark",
+    validator: (value) => ["light", "dark"].includes(value),
   },
 });
 

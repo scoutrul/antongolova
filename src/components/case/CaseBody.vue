@@ -56,7 +56,7 @@
         v-if="gtXl"
         class="flex-shrink-0 xl:sticky xl:top-[160px] h-[calc(100vh-280px)]"
       >
-        <CaseSummary :meta-items="metaItems" :next-case="nextCase" />
+        <CaseSummary :meta-items="metaItems" :work-done="workDone" :next-case="nextCase" />
       </div>
     </div>
 
@@ -89,6 +89,10 @@ const props = defineProps({
   metaItems: {
     type: Array,
     required: true,
+  },
+  workDone: {
+    type: Object,
+    default: null,
   },
   nextCase: {
     type: Object,

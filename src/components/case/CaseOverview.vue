@@ -7,7 +7,7 @@
       class="w-full max-w-[1592px] mx-auto"
       :class="[
         gtXl
-          ? 'grid grid-cols-[1fr_2fr_2fr] gap-8'
+          ? 'grid grid-cols-[1fr_2fr] gap-8'
           : gtLg
             ? 'flex flex-col gap-16'
             : 'flex flex-col gap-8',
@@ -23,16 +23,18 @@
         {{ title }}
       </BaseText>
 
-      <!-- Текстовые блоки -->
-      <BaseHeading
-        v-for="(section, index) in sections"
-        :key="index"
-        :level="5"
-        :as="'div'"
-        class="text-black-90"
-      >
-        {{ section.text }}
-      </BaseHeading>
+      <!-- Текстовые блоки в отдельной колонке -->
+      <div class="flex flex-col gap-8">
+        <BaseHeading
+          v-for="(section, index) in sections"
+          :key="index"
+          :level="5"
+          :as="'div'"
+          class="text-black-90"
+        >
+          {{ section.text }}
+        </BaseHeading>
+      </div>
     </div>
   </BaseContainer>
 </template>

@@ -12,18 +12,7 @@ import faqRu from "@/data/ru/faq.json";
 import benefitsRu from "@/data/ru/benefits.json";
 
 // Импорт английских данных
-import metaEn from "@/data/en/meta.json";
-import headerEn from "@/data/en/header.json";
-import heroEn from "@/data/en/hero.json";
-import toolsEn from "@/data/en/tools.json";
-import casesEn from "@/data/en/cases.json";
-import howWeWorkEn from "@/data/en/howWeWork.json";
-import expertiseEn from "@/data/en/expertise.json";
-import comparisonEn from "@/data/en/comparison.json";
-import opportunitiesEn from "@/data/en/opportunities.json";
-import reviewsEn from "@/data/en/reviews.json";
-import faqEn from "@/data/en/faq.json";
-import benefitsEn from "@/data/en/benefits.json";
+// leter
 
 export const useContentStore = defineStore("content", () => {
   const languageStore = useLanguageStore();
@@ -41,18 +30,7 @@ export const useContentStore = defineStore("content", () => {
 
   // Собираем английские данные из отдельных файлов
   const dataEn = ref({
-    meta: metaEn,
-    header: headerEn,
-    hero: heroEn,
-    tools: toolsEn,
-    cases: casesEn,
-    howWeWork: howWeWorkEn,
-    expertise: expertiseEn,
-    comparison: comparisonEn,
-    opportunities: opportunitiesEn,
-    reviews: reviewsEn,
-    faq: faqEn,
-    benefits: benefitsEn,
+    // leter
   });
 
   // Getters
