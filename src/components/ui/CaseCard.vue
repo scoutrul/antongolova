@@ -20,17 +20,16 @@
       </BaseText>
     </header>
 
-    <!-- Контейнер изображения -->
+    <!-- Контейнер медиа -->
     <div
       class="case-card__media"
       :class="{ 'case-card__media-surface': !image }"
     >
-      <img
+      <CaseMedia
         v-if="image"
         :src="image"
         :alt="title"
-        class="case-card__image"
-        loading="lazy"
+        class="case-card__image rounded-none"
       />
     </div>
   </BaseCard>
@@ -40,6 +39,7 @@
 import { useRouter } from "vue-router";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
 import { BaseCard, BaseHeading, BaseText } from "@/components/base";
+import CaseMedia from "@/components/case/CaseMedia.vue";
 
 const router = useRouter();
 const { gtLg } = useBreakpoints();
@@ -54,7 +54,7 @@ const props = defineProps({
     required: true,
   },
   image: {
-    type: String,
+    type: [String, Array],
     default: "",
   },
   slug: {

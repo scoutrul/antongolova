@@ -31,7 +31,7 @@
       v-if="block.image"
       :src="block.image"
       :src-mobile="block.imageMobile"
-      :alt="block.subtitle || block.title || 'Case study media'"
+      :alt="block.subtitle || block.title || ''"
       :poster="block.poster"
     />
   </div>
