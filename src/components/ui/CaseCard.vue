@@ -80,7 +80,7 @@ const handleClick = () => {
 }
 
 .case-card__media {
-  @apply w-full h-full flex items-center justify-center;
+  @apply w-full h-full flex items-center justify-center overflow-hidden;
 }
 
 .case-card__media-surface {

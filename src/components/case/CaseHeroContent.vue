@@ -15,23 +15,25 @@
       <BaseHeading :level="gtXl ? 3 : 4" :as="'h1'" class="text-white-100">
         {{ title }}
       </BaseHeading>
-    
+
       <!-- Статистики -->
-      <div  class="grid gap-8 grid-cols-2">
+      <div class="grid gap-8 grid-cols-2">
         <div
           v-for="(stat, index) in stats"
           :key="index"
           class="flex flex-col gap-2"
         >
-          <BaseHeading 
-            :level="gtLg ? 4 : 5" 
-            :as="stat.url ? 'a' : 'div'" 
+          <BaseHeading
+            :level="gtLg ? 4 : 5"
+            :as="stat.url ? 'a' : 'div'"
             :href="stat.url"
             :target="stat.url ? '_blank' : undefined"
             :rel="stat.url ? 'noopener noreferrer' : undefined"
             :class="[
               'text-white-100',
-              stat.url ? 'hover:opacity-80 transition-opacity cursor-pointer' : ''
+              stat.url
+                ? 'hover:opacity-80 transition-opacity cursor-pointer'
+                : '',
             ]"
           >
             {{ stat.value }}
@@ -94,5 +96,4 @@ const props = defineProps({
     default: false,
   },
 });
-
 </script>
