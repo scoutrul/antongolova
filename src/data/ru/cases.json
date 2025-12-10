@@ -19,6 +19,12 @@
       "title": "AstroBit",
       "description": "Астрономическая платформа анализа криптовалют и космических событий",
       "image": "/assets/cases/astrobit/astrobit.png"
+    },
+    {
+      "slug": "futurebox",
+      "title": "FutureBox",
+      "description": "Платформа для работы с будущим",
+      "image": "/assets/cases/futurebox/logo.png"
     }
   ]
 }
