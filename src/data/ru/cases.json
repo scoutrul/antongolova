@@ -5,8 +5,14 @@
     {
       "slug": "geovo",
       "title": "geovo.me",
-      "description": "Личный сайт и блог для дизайнера Егора",
+      "description": "Личный сайт и блог дизайнера Егора",
       "image": "/assets/cases/geovo/geovo_loader.webm"
+    },
+    {
+      "slug": "bubbleme",
+      "title": "bubbleme.space",
+      "description": "Геймифицированное интерактивное резюме с физикой пузырей",
+      "image": "/assets/cases/bubbleme/bblme.webm"
     }
   ]
 }
