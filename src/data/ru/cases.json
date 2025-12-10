@@ -13,6 +13,12 @@
       "title": "bubbleme.space",
       "description": "Геймифицированное интерактивное резюме с физикой пузырей",
       "image": "/assets/cases/bubbleme/bblme.webm"
+    },
+    {
+      "slug": "astrobit",
+      "title": "AstroBit",
+      "description": "Астрономическая платформа анализа криптовалют и космических событий",
+      "image": "/assets/cases/astrobit/astrobit.png"
     }
   ]
 }

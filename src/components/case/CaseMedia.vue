@@ -24,7 +24,7 @@
         v-else
         :src="item.src"
         :alt="item.alt || alt"
-        class="max-w-full h-auto w-auto object-contain mx-auto bg-white-100"
+        class="w-full h-full object-cover bg-white-100"
         loading="lazy"
       />
     </div>
@@ -53,7 +53,7 @@
       v-else
       :src="currentSrc"
       :alt="alt"
-      class="max-w-full h-auto w-auto object-contain mx-auto bg-white-100"
+      class="w-full h-full object-cover bg-white-100"
       loading="lazy"
     />
   </div>
