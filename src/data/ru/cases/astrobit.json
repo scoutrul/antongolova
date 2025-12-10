@@ -98,6 +98,16 @@
           },
           {
             "type": "subsection",
+            "subtitle": "UI: события, фильтры, поиск",
+            "text": "Показал в продукте, как работать с лентой космических событий и котировками: быстрый поиск, фильтры по типам и временным окнам, таймлайн с подсветкой выбранных событий.",
+            "image": [
+              "/assets/cases/astrobit/astrobit_events.webm",
+              "/assets/cases/astrobit/astrobit_filters.webm",
+              "/assets/cases/astrobit/astrobit_search.webm"
+            ]
+          },
+          {
+            "type": "subsection",
             "subtitle": "Стек и архитектура",
             "text": "React 19 + TypeScript + Vite 6, Zustand для стора, React Router 7. Tailwind 3 для UI. Инфраструктура: Node 20, Docker Compose, Postgres 15 + pgAdmin, n8n для автоматизаций. E2E — Playwright. Использую Cursor AI для ускорения генерации кода и рефакторингов."
           },
