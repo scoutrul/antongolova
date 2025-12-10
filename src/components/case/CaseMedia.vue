@@ -9,10 +9,10 @@
       <!-- Видео -->
       <video
         v-if="isVideoFile(item.src)"
+        ref="videoElements"
         :src="item.src"
         :poster="item.poster"
         class="w-full h-full object-cover bg-white-100"
-        autoplay
         muted
         loop
         playsinline
@@ -24,7 +24,7 @@
         v-else
         :src="item.src"
         :alt="item.alt || alt"
-        class="w-full h-full object-cover bg-white-100"
+        class="max-w-full h-auto w-auto object-contain mx-auto bg-white-100"
         loading="lazy"
       />
     </div>
@@ -38,10 +38,10 @@
     <!-- Видео -->
     <video
       v-if="isVideo"
+      ref="singleVideoRef"
       :src="currentSrc"
       :poster="poster"
       class="w-full h-full object-cover bg-white-100"
-      autoplay
       muted
       loop
       playsinline
@@ -53,7 +53,7 @@
       v-else
       :src="currentSrc"
       :alt="alt"
-      class="w-full h-full object-cover bg-white-100"
+      class="max-w-full h-auto w-auto object-contain mx-auto bg-white-100"
       loading="lazy"
     />
   </div>
@@ -62,8 +62,12 @@
 <script setup>
 import { computed } from "vue";
 import { useBreakpoints } from "@/composables/useBreakpoints.js";
+import { onMounted, onUnmounted, ref, watch, nextTick } from "vue";
 
 const { gtMd } = useBreakpoints();
+const videoElements = ref([]);
+const singleVideoRef = ref(null);
+let observer = null;
 
 const props = defineProps({
   src: {
@@ -132,10 +136,57 @@ const currentSrc = computed(() => {
   }
   return props.src;
 });
+
+const observeVideo = (video) => {
+  if (!video) return;
+  observer?.observe(video);
+};
+
+const handleIntersect = (entries) => {
+  entries.forEach((entry) => {
+    const video = entry.target;
+    if (entry.isIntersecting) {
+      video.muted = true;
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
+  });
+};
+
+onMounted(() => {
+  observer = new IntersectionObserver(handleIntersect, {
+    threshold: 0.25,
+  });
+
+  nextTick(() => {
+    videoElements.value.forEach((video) => observeVideo(video));
+    if (singleVideoRef.value) observeVideo(singleVideoRef.value);
+  });
+});
+
+onUnmounted(() => {
+  observer?.disconnect();
+  observer = null;
+});
+
+watch(
+  videoElements,
+  () => {
+    if (!observer) return;
+    videoElements.value.forEach((video) => observeVideo(video));
+  },
+  { deep: true }
+);
+
+watch(singleVideoRef, (video) => {
+  if (!observer || !video) return;
+  observeVideo(video);
+});
 </script>
 
 <style scoped>
 .media-container {
-  @apply w-full;
+  width: 100%;
 }
 </style>

@@ -20,7 +20,7 @@
         :sections="caseData.body.sections"
         :meta-items="caseData.meta.items"
         :work-done="caseData.meta.workDone"
-        :next-case="caseData.nextCase"
+        :next-case="nextCase"
       />
 
       <!-- Cases Section -->
@@ -54,6 +54,7 @@ const slug = computed(() => route.params.slug);
 
 // Получаем данные кейса из store
 const caseData = computed(() => casesStore.getCaseBySlug(slug.value));
+const nextCase = computed(() => casesStore.getNextCase(slug.value));
 
 // Данные секции кейсов из контент стора
 const casesContent = computed(() => contentStore.currentData?.cases || {});
