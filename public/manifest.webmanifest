@@ -15,9 +15,9 @@
       "type": "image/svg+xml"
     },
     {
-      "src": "/cover.png",
-      "sizes": "512x512",
-      "type": "image/png"
+      "src": "/cover.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
     }
   ]
 }
