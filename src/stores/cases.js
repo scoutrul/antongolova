@@ -7,6 +7,7 @@ import caseGeovoRu from "@/data/ru/cases/geovo.json";
 import caseBubblemeRu from "@/data/ru/cases/bubbleme.json";
 import caseAstrobitRu from "@/data/ru/cases/astrobit.json";
 import caseFutureboxRu from "@/data/ru/cases/futurebox.json";
+import caseZemipravRu from "@/data/ru/cases/zemiprav.json";
 
 // Импорт полных данных кейсов (английский)
 // leter
@@ -15,7 +16,13 @@ export const useCasesStore = defineStore("cases", () => {
   const languageStore = useLanguageStore();
 
   // State - загружаем кейсы из отдельных JSON файлов
-  const casesRu = ref([caseGeovoRu, caseBubblemeRu, caseAstrobitRu, caseFutureboxRu]);
+  const casesRu = ref([
+    caseGeovoRu,
+    caseBubblemeRu,
+    caseAstrobitRu,
+    caseFutureboxRu,
+    caseZemipravRu,
+  ]);
   const casesEn = ref([
     // leter
   ]);
