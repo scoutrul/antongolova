@@ -3,22 +3,10 @@
   "subtitle": "Некоторые из моих проектов, которые точно не оставят равнодушным",
   "items": [
     {
-      "slug": "geovo",
-      "title": "geovo.me",
-      "description": "Личный сайт-портфолио дизайнера Егора",
-      "image": "/assets/cases/geovo/geovo_loader.webm"
-    },
-    {
-      "slug": "bubbleme",
-      "title": "bubbleme.space",
-      "description": "Геймифицированное интерактивное резюме с физикой пузырей",
-      "image": "/assets/cases/bubbleme/bblme.webm"
-    },
-    {
-      "slug": "astrobit",
-      "title": "AstroBit",
-      "description": "Астрономическая платформа анализа криптовалют и космических событий",
-      "image": "/assets/cases/astrobit/astrobit.png"
+      "slug": "zemiprav",
+      "title": "zemiprav.ru",
+      "description": "Корпоративный сайт юридической компании на WordPress",
+      "image": "/assets/cases/zemiprav/zemiprav_enter.webm"
     },
     {
       "slug": "futurebox",
@@ -27,10 +15,22 @@
       "image": "/assets/cases/futurebox/logo.png"
     },
     {
-      "slug": "zemiprav",
-      "title": "zemiprav.ru",
-      "description": "Корпоративный сайт юридической компании на WordPress",
-      "image": "/assets/cases/zemiprav/zemiprav_enter.webm"
+      "slug": "astrobit",
+      "title": "AstroBit",
+      "description": "Астрономическая платформа анализа криптовалют и космических событий",
+      "image": "/assets/cases/astrobit/astrobit.png"
+    },
+    {
+      "slug": "bubbleme",
+      "title": "bubbleme.space",
+      "description": "Геймифицированное интерактивное резюме с физикой пузырей",
+      "image": "/assets/cases/bubbleme/bblme.webm"
+    },
+    {
+      "slug": "geovo",
+      "title": "geovo.me",
+      "description": "Личный сайт-портфолио дизайнера Егора",
+      "image": "/assets/cases/geovo/geovo_loader.webm"
     }
   ]
 }
