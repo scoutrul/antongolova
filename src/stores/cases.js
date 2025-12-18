@@ -8,6 +8,7 @@ import caseBubblemeRu from "@/data/ru/cases/bubbleme.json";
 import caseAstrobitRu from "@/data/ru/cases/astrobit.json";
 import caseFutureboxRu from "@/data/ru/cases/futurebox.json";
 import caseZemipravRu from "@/data/ru/cases/zemiprav.json";
+import caseNeweraRu from "@/data/ru/cases/newera.json";
 
 // Импорт полных данных кейсов (английский)
 // leter
@@ -22,6 +23,7 @@ export const useCasesStore = defineStore("cases", () => {
     caseAstrobitRu,
     caseFutureboxRu,
     caseZemipravRu,
+    caseNeweraRu,
   ]);
   const casesEn = ref([
     // leter

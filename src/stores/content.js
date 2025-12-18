@@ -12,8 +12,7 @@ import faqRu from "@/data/ru/faq.json";
 import benefitsRu from "@/data/ru/benefits.json";
 
 // Импорт английских данных
-import metaEn from "@/data/en/meta.json";
-import headerEn from "@/data/en/header.json";
+// leter
 
 export const useContentStore = defineStore("content", () => {
   const languageStore = useLanguageStore();
@@ -31,8 +30,7 @@ export const useContentStore = defineStore("content", () => {
 
   // Собираем английские данные из отдельных файлов
   const dataEn = ref({
-    meta: metaEn,
-    header: headerEn,
+    // leter
   });
 
   // Getters
