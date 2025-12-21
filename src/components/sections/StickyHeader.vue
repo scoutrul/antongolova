@@ -1,6 +1,5 @@
 <template>
   <BaseContainer
-    v-if="isVisible"
     as="header"
     :max-width="'full'"
     class="!fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 !overflow-visible"
@@ -58,7 +57,7 @@
           </div>
           <!-- CTA -->
           <ContactButton
-            :class="theme === 'dark' ? 'text-white-100' : 'text-secondary'"
+            class="text-secondary"
             @click="$emit('cta-click')"
             :default-text="buttonText"
           />
@@ -115,7 +114,6 @@ const props = defineProps({
 
 // Внутреннее состояние для отслеживания скролла
 const isScrolled = ref(false);
-const isVisible = ref(true);
 const sloganRef = ref(null);
 const sloganIndex = ref(0);
 
@@ -135,23 +133,6 @@ const currentSlogan = computed(() => {
 // Обработчик скролла
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
-
-  // Проверяем, находится ли меню под hero секцией
-  if (props.theme === "dark") {
-    // Ищем hero секцию с темным фоном
-    const heroSection = document.querySelector(".case-hero");
-    if (heroSection) {
-      const heroRect = heroSection.getBoundingClientRect();
-      const heroBottom = heroRect.bottom;
-      // Показываем меню, когда hero секция еще видна (нижняя граница hero > 0)
-      // Скрываем меню, когда hero секция полностью прокручена вверх
-      isVisible.value = heroBottom > 0;
-    } else {
-      isVisible.value = true;
-    }
-  } else {
-    isVisible.value = true;
-  }
 };
 
 const stopSloganRotation = () => {
