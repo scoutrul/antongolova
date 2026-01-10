@@ -55,6 +55,21 @@
               @update:model-value="handleLanguageChange"
             />
           </div>
+          <!-- GitHub link -->
+          <a
+            href="https://github.com/scoutrul"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center justify-center w-10 h-10 transition-all"
+            aria-label="GitHub"
+          >
+            <img
+              src="/assets/icons/github.svg"
+              alt="GitHub"
+              :class="theme === 'dark' ? 'invert' : ''"
+              class="w-5 h-5 transition-all"
+            />
+          </a>
           <!-- CTA -->
           <ContactButton
             class="text-secondary"
