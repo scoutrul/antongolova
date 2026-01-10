@@ -6,7 +6,7 @@
         :level="gtLg ? 5 : null"
         :as="'h3'"
         :size="gtLg ? null : 'p1'"
-        class="text-black-90"
+        class="text-black-90 overflow-hidden text-ellipsis line-clamp-2 case-card__title"
       >
         {{ title }}
       </BaseHeading>
@@ -14,7 +14,7 @@
       <BaseText
         :as="'p'"
         size="p2"
-        class="text-black-50 min-h-[52px] text-description transition-all duration-300 ease-out"
+        class="text-black-50 min-h-[52px] text-description transition-all duration-300 ease-out overflow-hidden text-ellipsis line-clamp-2"
       >
         {{ description }}
       </BaseText>
@@ -77,6 +77,15 @@ const handleClick = () => {
 
 .case-card__header {
   @apply flex flex-col gap-2 sm:gap-4 p-6 sm:p-8 h-[166px];
+}
+
+.case-card__title {
+  min-height: auto !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .case-card__media {

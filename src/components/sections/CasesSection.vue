@@ -16,22 +16,45 @@
       </BaseText>
     </div>
 
-    <!-- Адаптивная сетка карточек -->
-    <AdaptiveGrid is-cards as="ul" role="list">
-      <li v-for="(caseItem, index) in cases" :key="index" class="list-none">
-        <CaseCard
-          class="min-w-[260px] sm:min-w-[auto] box-content sm:box-border min-h-[380px] sm:min-h-[420px] flex-1"
-          :title="caseItem.title"
-          :description="caseItem.description"
-          :image="caseItem.image"
-          :slug="caseItem.slug"
-        />
-      </li>
-    </AdaptiveGrid>
+    <!-- Группировка по годам -->
+    <div class="flex flex-col gap-12 xl:gap-16">
+      <div
+        v-for="[year, yearGroup] in groupedCasesByYear"
+        :key="year"
+        class="flex flex-col gap-6 xl:gap-8"
+      >
+        <!-- Заголовок года -->
+        <BaseHeading
+          :level="gtLg ? 4 : 5"
+          :as="gtLg ? 'h3' : 'h4'"
+          class="text-black-90"
+        >
+          {{ year }}
+        </BaseHeading>
+
+        <!-- Адаптивная сетка карточек для года -->
+        <AdaptiveGrid is-cards as="ul" role="list">
+          <li
+            v-for="(caseItem, index) in yearGroup"
+            :key="`${year}-${index}`"
+            class="list-none"
+          >
+            <CaseCard
+              class="min-w-[260px] sm:min-w-[auto] box-content sm:box-border min-h-[380px] sm:min-h-[420px] flex-1"
+              :title="caseItem.title"
+              :description="caseItem.description"
+              :image="caseItem.image"
+              :slug="caseItem.slug"
+            />
+          </li>
+        </AdaptiveGrid>
+      </div>
+    </div>
   </BaseContainer>
 </template>
 
 <script setup>
+import { computed } from "vue";
 import {
   BaseContainer,
   BaseHeading,
@@ -43,7 +66,7 @@ import { useBreakpoints } from "@/composables/useBreakpoints.js";
 
 const { gtLg } = useBreakpoints();
 
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: "",
@@ -71,5 +94,24 @@ defineProps({
     type: String,
     default: "",
   },
+});
+
+// Группировка кейсов по годам
+const groupedCasesByYear = computed(() => {
+  const grouped = {};
+
+  props.cases.forEach((caseItem) => {
+    const year = caseItem.year || 2025; // По умолчанию 2025, если год не указан
+    if (!grouped[year]) {
+      grouped[year] = [];
+    }
+    grouped[year].push(caseItem);
+  });
+
+  // Преобразуем в массив пар [year, cases] и сортируем по убыванию (новые сверху)
+  // Разворачиваем кейсы внутри каждого года (последние первыми)
+  return Object.entries(grouped)
+    .map(([year, cases]) => [year, [...cases].reverse()])
+    .sort((a, b) => Number(b[0]) - Number(a[0]));
 });
 </script>

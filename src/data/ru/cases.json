@@ -3,40 +3,60 @@
   "subtitle": "Некоторые из моих проектов, которые точно не оставят равнодушным",
   "items": [
     {
+      "id": 1,
       "slug": "geovo",
       "title": "geovo.me",
       "description": "Личный сайт-портфолио дизайнера Егора",
-      "image": "/assets/cases/geovo/geovo_loader.webm"
+      "image": "/assets/cases/geovo/geovo_loader.webm",
+      "year": 2025
     },
     {
+      "id": 2,
       "slug": "bubbleme",
       "title": "bubbleme.space",
       "description": "Геймифицированное интерактивное резюме с физикой пузырей",
-      "image": "/assets/cases/bubbleme/bblme.webm"
+      "image": "/assets/cases/bubbleme/bblme.webm",
+      "year": 2025
     },
     {
+      "id": 3,
       "slug": "astrobit",
       "title": "AstroBit",
       "description": "Астрономическая платформа анализа криптовалют и космических событий",
-      "image": "/assets/cases/astrobit/astrobit.png"
+      "image": "/assets/cases/astrobit/astrobit.png",
+      "year": 2025
     },
     {
+      "id": 4,
       "slug": "futurebox",
       "title": "FutureBox",
       "description": "Платформа для обзора недвижимости в 3D",
-      "image": "/assets/cases/futurebox/logo.png"
+      "image": "/assets/cases/futurebox/logo.png",
+      "year": 2025
     },
     {
+      "id": 5,
       "slug": "zemiprav",
       "title": "zemiprav.ru",
       "description": "Корпоративный сайт юридической компании на WordPress",
-      "image": "/assets/cases/zemiprav/zemiprav_logo.png"
+      "image": "/assets/cases/zemiprav/zemiprav_logo.png",
+      "year": 2025
     },
     {
+      "id": 6,
       "slug": "newera",
       "title": "neweraevents.ru",
       "description": "Корпоративный сайт для нового поколения мероприятий",
-      "image": "/assets/cases/newera/neweraevents.webm"
+      "image": "/assets/cases/newera/neweraevents.webm",
+      "year": 2025
+    },
+    {
+      "id": 1,
+      "slug": "mock2026",
+      "title": "Моковый проект 2026",
+      "description": "Первый проект нового года для демонстрации группировки",
+      "image": "/assets/cases/geovo/geovo_loader.webm",
+      "year": 2026
     }
   ]
 }
