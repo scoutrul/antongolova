@@ -1,0 +1,120 @@
+{
+  "id": "futurebox",
+  "slug": "futurebox",
+  "hero": {
+    "title": "FutureBox — interactive real estate visualization platform",
+    "stats": [
+      {
+        "value": "futurebox.tech",
+        "description": "website link",
+        "url": "https://futurebox.tech/"
+      },
+      {
+        "value": "1 week",
+        "description": "development time"
+      },
+      {
+        "value": "Vue 3 + Three.js",
+        "description": "stack"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "Team project (friends, like-minded people)",
+        "label": "client"
+      },
+      {
+        "value": "Moscow",
+        "label": "location"
+      },
+      {
+        "value": "Frontend Developer",
+        "label": "role"
+      },
+      {
+        "value": "Vue 3, Vite, Tailwind CSS, Three.js, Mapbox GL, Threebox Plugin",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Frontend development: integration of 3D building models on Mapbox maps, creation of platform for showcasing properties, connection with executor. Component architecture, glassmorphism design, responsiveness."
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "FutureBox is an interactive real estate visualization platform with 3D models and cartography. Combines Three.js for rendering GLB building models and Mapbox GL for interactive maps via Threebox plugin."
+      },
+      {
+        "text": "Platform allows viewing buildings in 3D directly on map, filtering apartments, studying layouts and characteristics. Uses modern component architecture Vue 3 with Composition API and design system in glassmorphism style."
+      },
+      {
+        "text": "Project developed as part of team of friends and like-minded people. I was responsible for frontend development: 3D model integration, creation of platform for showcasing properties, and connection with executor. Current version was created in one week, project continues to develop."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Classic real estate sites show only photos and descriptions. Project idea — give user ability to explore real estate in three-dimensional space with absolutely free control through interactive dynamic 3D map. Need a platform where you can freely move, rotate, scale, and study objects in 3D directly on map."
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Create interactive platform with integration of 3D building models on Mapbox maps, apartment filtering, detailed panels with information, and adaptive interface for all devices.",
+            "image": ["/assets/cases/futurebox/screenshot.png"]
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "3D visualization and cartography",
+            "text": "Integrated Three.js for rendering GLB building models and Mapbox GL for interactive maps. Used Threebox plugin for overlaying 3D models on maps — buildings display in 3D directly on map with rotation and scaling capability.",
+            "image": ["/assets/cases/futurebox/futurebox_demo1.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Component architecture",
+            "text": "Built modular architecture: base design system components (`components/base/`), composite components for buildings and apartments, presentational and smart components with logic. Used Composition API with composables for logic reuse: `useBreakpoints`, `useBuildingPanel`, `useModal3D`.",
+            "image": ["/assets/cases/futurebox/futurebox_demo4.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Design system and UI",
+            "text": "Implemented glassmorphism effects with blur and transparency. Mobile-first approach with adaptive breakpoints. Detailed design system documentation for component consistency.",
+            "image": ["/assets/cases/futurebox/futurebox_demo2.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Stack and tools",
+            "text": "Vue 3 with Composition API for reactivity, Vite for fast builds and HMR, Tailwind CSS for styling. Three.js for 3D, Mapbox GL for maps, Threebox for integration. Mock data in `src/mocks/` for development, typed Building and Apartment structures."
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Got interactive real estate visualization platform: buildings in 3D on maps, apartment filtering, detailed panels with information, adaptive design. Modular architecture simplifies feature expansion and adding new properties."
+          }
+        ]
+      }
+    ]
+  }
+}

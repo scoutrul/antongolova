@@ -1,0 +1,141 @@
+{
+  "id": "zemiprav",
+  "slug": "zemiprav",
+  "hero": {
+    "title": "Corporate website of LLC \"Zemlya i Pravo\"",
+    "stats": [
+      {
+        "value": "zemiprav.ru",
+        "description": "website link",
+        "url": "https://zemiprav.ru"
+      },
+      {
+        "value": "WordPress",
+        "description": "CMS"
+      },
+      {
+        "value": "$2500",
+        "description": "cost"
+      },
+      {
+        "value": "4-5 months",
+        "description": "development time"
+      },
+      {
+        "value": "PHP, MySQL, SCSS, jQuery",
+        "description": "stack"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "LLC \"Zemlya i Pravo\"",
+        "label": "client"
+      },
+      {
+        "value": "Primorsky Krai",
+        "label": "location"
+      },
+      {
+        "value": "Full-stack Developer",
+        "label": "role"
+      },
+      {
+        "value": "WordPress, PHP, MySQL, SCSS, Bootstrap, jQuery, JavaScript",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Custom WordPress theme development from scratch: template structure, custom post types, multi-level menu, contact forms, Google Maps integration, Yandex.Metrika and Review Lab Service integration, content generation using LLM, responsive design."
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "zemiprav.ru is a corporate website for a law firm specializing in providing legal and cadastral services in Primorsky Krai. The project is a fully functional portal with content management capability through WordPress admin panel."
+      },
+      {
+        "text": "Website includes service catalog (legal, cadastral, geodetic works, design, court expertise, real estate sales), blog with article publishing, client review system, contact forms, and interactive map with offices in three cities: Vladivostok, Bolshoy Kamen, and Nakhodka."
+      },
+      {
+        "text": "Custom WordPress theme developed with responsive design, multi-level mega-menu (up to 4 levels), custom post types for blog, AJAX contact forms, and external service integrations."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Company needed a modern corporate website to present services, publish news, and attract clients. Previously company had a website, but only saved versions in archive.org remained, which served as main reference for starting development.\n\nMain difficulty was lack of content and filling: client provided only website structure and service list, but without text content. This created difficulties in creating service pages and other website sections."
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Develop custom WordPress theme from scratch:\n\n- create template structure for homepage, service pages, blog\n- implement multi-level menu with automatic generation based on page hierarchy\n- add custom post type for blog\n- integrate contact forms with AJAX processing\n- connect Google Maps for displaying offices\n- set up Yandex.Metrika integration\n- ensure responsive design for all devices\n- optimize performance and SEO"
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "WordPress theme architecture",
+            "text": "Created modular theme structure with template separation: homepage (index.php), pages (page.php), blog posts (single.php), special blocks (special.php, blog_glavnaya.php, uslugi_lenta.php, otzivy_lenta.php). Implemented custom functions in functions.php: thumbnail support, breadcrumbs, custom 'blog' post type, form processing via WordPress AJAX API. Used MySQL for storing content, settings, and user data through standard WordPress tables.",
+            "image": ["/assets/cases/zemiprav/zemiprav_demo.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Multi-level mega-menu",
+            "text": "Developed dynamic menu (menu.php) with automatic generation based on WordPress page hierarchy. Support for up to 4 levels of nesting with merging of 3rd and 4th subsections into one column. Responsive menu for mobile devices using RD Navbar. Sticky menu on scroll for convenient navigation."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Contact forms",
+            "text": "Implemented AJAX form processing without page reload via WordPress AJAX API. Validation via Regula library. Email sending to zemipravcrm@mail.ru. Forms integrated on service pages for receiving client requests."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Styling and responsiveness",
+            "text": "Used SCSS preprocessor with modular structure: custom variables, mixins, components, modules. Compilation to CSS with source maps. Bootstrap for responsive grid with custom settings. Responsive design via media queries for all breakpoints (xs, sm, md, lg, xl, xxl)."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "JavaScript functionality",
+            "text": "Integrated jQuery and libraries: Swiper for sliders, Owl Carousel for carousels, LightGallery for galleries, Magnific Popup for modals, Isotope for filtering, WOW.js for scroll animations. Initialization of all plugins in script.js with support for old browsers (IE 10+ via html5shiv and pointer-events polyfills)."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Development process and content generation",
+            "text": "Design and WordPress theme development took about two months. Project didn't have strict deadlines — development rhythm was determined by client. Main difficulty was lack of content for service pages. Decision was made to generate this content using LLM models (GPT-chat). As a result, all website sections were filled: template developed, texts and corresponding illustrations generated. Project was completed in 4-5 months.",
+            "image": ["/assets/cases/zemiprav/zemiprav_demo2.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Integrations and optimization",
+            "text": "Connected Google Maps API for interactive map with offices in three cities. Integrated Yandex.Metrika (ID: 99998314) for analytics. Connected review system via external Review Lab Service platform. Implemented automatic addition of alt and title for images via zemiprav_modify_image_block function. Set up access restrictions to admin panel for different user roles. Applied performance optimization: caching and other capabilities provided by WordPress and its ecosystem."
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Created fully functional custom WordPress theme for corporate website:\n\n- Convenient content management through WordPress admin panel\n- Multi-level menu with automatic generation (up to 4 levels)\n- Service catalog with order forms\n- Blog with thumbnail and formatting support\n- Client review system\n- Interactive map with offices in three cities\n- AJAX contact forms\n- Responsive design for all devices\n- Google Maps and Yandex.Metrika integration\n- Performance and SEO optimization\n- Cross-browser compatibility (including IE 10+)\n\nWebsite successfully works in production and is available at zemiprav.ru. Company can independently manage content, add new services, publish blog articles, and process client requests."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "title": "Cases",
+  "subtitle": "Some of my projects that definitely won't leave you indifferent",
+  "items": [
+    {
+      "id": 1,
+      "slug": "geovo",
+      "title": "geovo.me",
+      "description": "Personal portfolio website for designer Egor",
+      "image": "/assets/cases/geovo/geovo_loader.webm",
+      "year": 2025
+    },
+    {
+      "id": 2,
+      "slug": "bubbleme",
+      "title": "bubbleme.space",
+      "description": "Gamified interactive resume with bubble physics",
+      "image": "/assets/cases/bubbleme/bblme.webm",
+      "year": 2025
+    },
+    {
+      "id": 3,
+      "slug": "astrobit",
+      "title": "AstroBit",
+      "description": "Astronomical platform for cryptocurrency and space events analysis",
+      "image": "/assets/cases/astrobit/astrobit.png",
+      "year": 2025
+    },
+    {
+      "id": 4,
+      "slug": "futurebox",
+      "title": "FutureBox",
+      "description": "Platform for 3D real estate viewing",
+      "image": "/assets/cases/futurebox/logo.png",
+      "year": 2025
+    },
+    {
+      "id": 5,
+      "slug": "zemiprav",
+      "title": "zemiprav.ru",
+      "description": "Corporate website for a law firm on WordPress",
+      "image": "/assets/cases/zemiprav/zemiprav_logo.png",
+      "year": 2025
+    },
+    {
+      "id": 6,
+      "slug": "newera",
+      "title": "neweraevents.ru",
+      "description": "Corporate website for the new generation of events",
+      "image": "/assets/cases/newera/neweraevents.webm",
+      "year": 2025
+    },
+    {
+      "id": 1,
+      "slug": "frontstart",
+      "title": "Frontstart.ru",
+      "description": "Educational platform for frontend developers with knowledge base and AI assistant",
+      "image": "/assets/cases/frontstart/frontstart_logo.png",
+      "year": 2026
+    }
+  ]
+}

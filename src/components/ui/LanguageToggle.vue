@@ -12,7 +12,8 @@
 
 <script setup>
 import { computed } from "vue";
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
+import { useLanguageStore } from "@/stores/language";
 import BaseButton from "@/components/base/BaseButton.vue";
 
 const props = defineProps({
@@ -33,6 +34,8 @@ const props = defineProps({
 
 const emit = defineEmits(["update:modelValue"]);
 const router = useRouter();
+const route = useRoute();
+const languageStore = useLanguageStore();
 
 const isDark = computed(() => props.theme === "dark");
 
@@ -72,7 +75,14 @@ const toggleLanguage = () => {
 
   const nextCode = languagesList.value[nextIndex].code;
 
+  // Обновляем язык в store
+  languageStore.setLanguage(nextCode);
   emit("update:modelValue", nextCode);
-  navigateToLanguage(nextCode);
+
+  // Редирект только на главной странице, на странице кейса остаемся на месте
+  const isHomePage = route.name === "Home" || route.name === "HomeRu" || route.name === "HomeEn";
+  if (isHomePage) {
+    navigateToLanguage(nextCode);
+  }
 };
 </script>

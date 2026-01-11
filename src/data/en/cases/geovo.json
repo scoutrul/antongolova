@@ -1,0 +1,143 @@
+{
+  "id": "geovo",
+  "slug": "geovo",
+  "hero": {
+    "title": "Portfolio website for designer Egor Vorobyov",
+    "stats": [
+      {
+        "value": "2 weeks",
+        "description": "timeline"
+      },
+      {
+        "value": "$1200",
+        "description": "cost"
+      },
+      {
+        "value": "geovo.me",
+        "description": "website link",
+        "url": "https://geovo.me"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "Egor Vorobyov",
+        "label": "client"
+      },
+      {
+        "value": "Remote",
+        "label": "location"
+      },
+      {
+        "value": "Frontend Developer, design assistant",
+        "label": "role"
+      },
+      {
+        "value": "Vue 3, Vite, Vue Router, Pinia, Tailwind CSS, Figma, Vercel, WebGL",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Figma design integration into Vue.js, development of unique mechanics, responsive layout, performance optimization"
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "geovo.me is a personal portfolio website for designer Egor Vorobyov. The project was meant to be a business card showcasing works, experience, and design approach."
+      },
+      {
+        "text": "The client is a designer himself and developed the complete design layout in Figma using a design system. My task was to accurately integrate this design into the Vue.js stack, preserving all details and visual solutions."
+      },
+      {
+        "text": "Thanks to close collaboration with the client, we managed to implement unique design mechanics and create a truly quality product."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "The client didn't have their own portfolio website. Existing solutions were either too expensive or didn't provide the needed flexibility in displaying works and content.\n\nA website was needed that:\n- loads fast and runs smoothly\n- looks great on all devices\n- is easy to update and expand\n- has modern design matching the designer's level"
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Develop a portfolio website from scratch:\n\n- implement responsive design for all devices\n- ensure high performance and load speed\n- create convenient navigation and content structure\n- set up SEO for better indexing\n- prepare for deployment on Vercel"
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "Integrated design from Figma",
+            "text": "Accurately transferred all design from Figma to Vue.js, preserving all visual details, spacing, typography, and color scheme. Worked directly with the client's design system.",
+            "image": [
+              "/assets/cases/geovo/geovo_figma1.png",
+              "/assets/cases/geovo/geovo_figma2.png",
+              "/assets/cases/geovo/geovo_figma3.png"
+            ]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Implemented unique mechanics",
+            "text": "Thanks to close collaboration with the designer, we managed to implement several unique mechanics:\n\n- Beautiful animated preloader \"Screen\" with better UX: while video loads for the hero section, user sees a smooth loading screen\n- Infinite video feed\n- Language switching\n- Responsive design for all devices\n\nEach mechanic was carefully worked out and agreed with the client.",
+            "image": ["/assets/cases/geovo/geovo_loader_hero.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Chose modern stack",
+            "text": "Used Vue 3 with Composition API for reactivity and logic reuse. Vite for fast builds and development. Tailwind CSS for styling. Pinia for state management."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Optimized performance",
+            "text": "Set up lazy loading for sections and images. Minimized bundle size. Optimized images and assets. Implemented code splitting for routes."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Set up deployment",
+            "text": "Prepared project for deployment on Vercel. Set up automatic deployment from Git. Optimized configuration for production."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Used AI to speed up development",
+            "text": "During project development, an AI system was used to speed up development. Under my careful guidance, such a flexible and stable architecture was developed that making changes and generating code became a real pleasure and joy for me as a developer.\n\n\"Write less by hand. Think more with your head\" — that's my motto."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Proposed background effect on Canvas/WebGL",
+            "text": "Personally, I proposed the idea of a background effect implemented on Canvas using WebGL. This effect became a visual highlight of the project and added modernity and dynamism to the design.",
+            "image": ["/assets/cases/geovo/geovo_bg.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Implemented convenient content management system",
+            "text": "JSON files were used for content storage, which the client could edit independently without needing to change code. This ensured flexibility and ease of content updates.\n\nMain page and internal case pages were created with smooth transitions between them. Selected language is saved in user's localStorage, ensuring convenient routing and content editing."
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Created a fully functional portfolio website with excellent performance metrics:\n\n- Lighthouse Performance: 100\n- Load time: less than 0.5 seconds\n- Full responsiveness on all devices\n- Unique design mechanics (preloader, infinite feed, language switching)\n- Accurate design integration from Figma\n- Modern stack and architecture for easy expansion\n- Background effect on Canvas/WebGL\n\nThe client was very satisfied with the result. The website successfully works in production and is available at geovo.me\n\nIt's also worth noting that this project served as a prototype for my current website with Egor's consent."
+          }
+        ]
+      }
+    ]
+  }
+}

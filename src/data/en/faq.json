@@ -1,0 +1,37 @@
+{
+  "title": "FAQ",
+  "items": [
+    {
+      "question": "How much does it cost to bring you on board for frontend?",
+      "answer": "Pricing depends on volume and criticality of tasks. I can work hourly for targeted fixes, fixed-price for specific features, or full-time slot for several months. After a short call, I provide a range and document it in Notion so the budget is transparent before work begins"
+    },
+    {
+      "question": "Can we start with a small feature?",
+      "answer": "Yes. We often start with a pilot ticket: refine a component, fix performance, or build a landing page. You see how I integrate into processes, then we can expand the scope"
+    },
+    {
+      "question": "How quickly can you get started?",
+      "answer": "Usually within 1–3 days: we sync on the task, I connect to the repo and CI, set up the environment. By the first week you already have a ready PR or release build"
+    },
+    {
+      "question": "Do you work alone or with a team?",
+      "answer": "I handle frontend independently, but if needed, I bring in trusted backend, design, or DevOps people. Communication always goes through me — no managers and no 'lost' requirements"
+    },
+    {
+      "question": "How are you different from an agency or hiring a full-time developer?",
+      "answer": "Agencies need time to understand, and a full-time developer needs onboarding and retention. With me, you get a senior frontend engineer who already understands processes and doesn't need hand-holding: I quickly take responsibility and deliver measurable results"
+    },
+    {
+      "question": "What guarantees do you provide?",
+      "answer": "I'm responsible not for 'beautiful code', but for metrics: load speed, errors in Sentry, conversion. After release, I support, refine, and measure results through analytics dashboards"
+    },
+    {
+      "question": "Where are you located and how do you work with international teams?",
+      "answer": "I'm based in Bali, but I'm used to working with CIS, USA, Europe. Time slots for your timezone, fluent English, I can invoice in any currency or crypto"
+    },
+    {
+      "question": "Do you work with startups or large companies?",
+      "answer": "Experience with both. In startups, I build frontend platforms from scratch, choose stack and infrastructure. In corporations, I optimize existing applications, close technical debt, and speed up releases"
+    }
+  ]
+}

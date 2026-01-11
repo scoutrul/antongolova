@@ -1,0 +1,154 @@
+{
+  "id": "newera",
+  "slug": "newera",
+  "hero": {
+    "title": "New Era Events — corporate retreats for teams",
+    "stats": [
+      {
+        "value": "neweraevents.ru",
+        "description": "retreats landing",
+        "url": "https://neweraevents.ru"
+      },
+      {
+        "value": "Single-page landing",
+        "description": "format"
+      },
+      {
+        "value": "React 19 + Tailwind",
+        "description": "stack"
+      },
+      {
+        "value": "≈ 2 weeks",
+        "description": "timeline including prototypes"
+      },
+      {
+        "value": "$600",
+        "description": "project cost"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "Glafira Sotnikova, New Era Events",
+        "label": "client"
+      },
+      {
+        "value": "Remote",
+        "label": "location"
+      },
+      {
+        "value": "Product & Frontend Developer, designer",
+        "label": "role"
+      },
+      {
+        "value": "React 19, TypeScript, Vite 6, Tailwind CSS, Web3Forms",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Designed and built New Era Events landing from scratch: from creative design development to frontend implementation and deployment. Made three design concepts using modern prototyping services and generative models (final — Google Gemini), built app on React 19 + Tailwind, connected Web3Forms for requests, set up smooth preloader and responsive layout."
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "New Era Events is a landing for mindful corporate retreats. Focus on team energy restoration, burnout work, and focus reboot, not just 'offsite parties'. Page tells who retreats suit, what formats exist, and what effect they give business."
+      },
+      {
+        "text": "Landing built as sequential narrative: from pain (burned-out employees and lost engagement) to solution (structured retreat programs, mindfulness practice, culture work). At the end — contact form to quickly connect and discuss retreat for team."
+      },
+      {
+        "text": "Private entrepreneur Glafira Sotnikova approached me with text brief for selling landing for corporate retreats. No design materials — only inputs, so I took on both creative, design, app development, and further deployment."
+      },
+      {
+        "text": "To find form, I first made two landing variants using modern prototyping services and interface generation. Both were working and 'marketing correct', but too reminiscent of typical landings. So I moved away from template structure and together with Google Gemini and its neurogenerative models assembled third, more alive concept — it clicked with client and became basis for final site."
+      },
+      {
+        "text": "Technically this is compact React app on Vite 6 and Tailwind CSS. I use Web3Forms service for contact form processing without separate backend."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Many companies get used to 'extinguishing burnout' with point activities: offsites, team building, parties. This gives brief emotional spike, but doesn't solve problem of exhausted teams and lost focus. Need format that really helps people recover, and business — return engagement and clarity of goals."
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Build single-page landing that in several screens explains: who needs corporate retreats, how they work, how they differ from regular offsite, and what to expect by result. Make this in format of light, modern UI without extra 'marketing water', with clear CTA — request for call."
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "First concept",
+            "text": "First landing variant I built on base of modern prototyping services and generation. It was neat, classic landing with clear block structure, which well closed text brief requirements and showed basic product story.",
+            "image": ["/assets/cases/newera/var1.webp"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Second concept",
+            "text": "In second variant I strengthened visual, worked with section rhythm, and added more accents. Landing became richer and more dynamic, but still felt typical, 'marketing' delivery — too close to how hundreds of other selling pages look.",
+            "image": ["/assets/cases/newera/var2.webp"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Final concept with Google Gemini",
+            "text": "After two iterations I shifted focus toward non-trivial structure and visual language. Together with Google Gemini and its neurogenerative models I assembled third concept — more alive, associative, and non-typical. It clicked with client and became basis for final site.",
+            "image": ["/assets/cases/newera/var3.webp"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Landing structure and content",
+            "text": "App split into independent section-components: `Header`, `Hero`, `Problem`, `Solution`, `Tools`, `Programs`, `Founder`, `Contact`, `Footer`. This approach eases maintenance and experiments with block order — can reuse sections or swap them without breaking layout."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Focus on burnout and business benefit",
+            "text": "In `Problem` and `Solution` blocks emphasis on real team states: chronic fatigue, lack of energy, loss of connection with company goals. In solution — work with body and psyche, focus reboot, and culture strengthening. This delivered through concrete formulations, not abstract 'wellness'."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Programs and formats",
+            "text": "`Programs` section shows that retreat is not 'one package for all', but set of formats: from short offsites to deep programs. Program cards structured by goals, duration, and work focus, so HR or founder quickly finds relevant format."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Contact form on Web3Forms",
+            "text": "In `Contact` block implemented request form that sends via Web3Forms. On front — validation and neat sending state, no need to set up backend: just specify `VITE_WEB3FORMS_KEY` in `.env`. This simplifies deployment and makes landing fully static."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Preloader and smooth start",
+            "text": "In `App` there's `Preloader` component that shows branded screen while fonts load (`document.fonts.ready`) and small timeout passes. This removes layout jitter and gives cohesive first animation — important for emotional product about retreats.",
+            "image": ["/assets/cases/newera/neweraevents.webm"]
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Got light, focused landing that clearly articulates pain of burnout in teams and offers clear solution format — New Era Events corporate retreats. Architecture on React 19 + Tailwind simplifies project development: can quickly add new sections, refine programs, and experiment with content without changing foundation."
+          }
+        ]
+      }
+    ]
+  }
+}

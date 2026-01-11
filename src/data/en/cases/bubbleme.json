@@ -1,0 +1,186 @@
+{
+  "id": "bubbleme",
+  "slug": "bubbleme",
+  "hero": {
+    "title": "Interactive gamified resume Bubbleme",
+    "stats": [
+      {
+        "value": "bubbleme.space",
+        "description": "website link",
+        "url": "https://bubbleme.space/"
+      },
+      {
+        "value": "≈2 months",
+        "description": "development time"
+      },
+      {
+        "value": "Clean Architecture",
+        "description": "approach"
+      },
+      {
+        "value": "Vue 3 + TypeScript",
+        "description": "frontend stack"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "Pet project",
+        "label": "client"
+      },
+      {
+        "value": "Remote",
+        "label": "location"
+      },
+      {
+        "value": "Frontend Lead, architect, game designer",
+        "label": "role"
+      },
+      {
+        "value": "Vue 3, TypeScript, Vite, Pinia, D3.js, GSAP, Tailwind CSS, E2E tests, LLM",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Designed Clean Architecture, implemented resume gamification: bubble physics on D3, animations on GSAP, levels/lives/achievements/bonuses, chatbot, responsiveness, FPS optimization, and production build."
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "Bubbleme is an interactive resume-game: skills and experience are represented as bubbles that can be 'popped', studied, and collected achievements. The project demonstrates my approach to architecture, UX, and animations through gameplay."
+      },
+      {
+        "text": "Everything is built on Clean Architecture principles: domain separation, use cases, repositories, and factories. This simplifies improvements and experiments with game design without code chaos."
+      },
+      {
+        "text": "I use classic gameplay practices: experience, levels, lives, achievements, bonuses, hidden elements. Strong focus on UX/UI — animations, color scheme, adaptive layers, and careful micro-effects for any device."
+      },
+      {
+        "text": "Chronology from memoirs: started in July 2025, idea of interactive resume-game after contract with Aeroflot, initially had backend (Node/Express/SQLite) — then removed for pure frontend; deep refactoring under Clean Architecture, DDD and use-case approach, then focus on interaction, modal queues, shake effects, and adaptive FPS."
+      },
+      {
+        "text": "Much work went into experiments with LLM and code autogeneration: lots of reworks and refactorings, moments of deadlock, but the result — architecture and integration with neural networks, where any changes are made quickly and without errors."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Classic resume poorly conveys engagement and real depth of skills. Wanted a format that immediately shows architectural approach, advanced animations, and attention to UX, not just a list of items."
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Create a gamified resume where user interacts with skills as game elements: physics, progress, achievements, bonuses, questions. At the same time, code should remain clean, extensible, and ready for experiments."
+          }
+        ]
+      },
+      {
+        "title": "Timeline and challenges",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Final timeline took about two months: several waves of refactoring under Clean Architecture and DDD, complete abandonment of initial backend (Node/Express/SQLite) in favor of frontend-only, restructuring domains and use-case layer, adapting physics and animations for mobile devices, FPS optimization, and repackaging UI/UX with cinematic animations and modal queue."
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "Architecture and stack",
+            "text": "Applied Clean Architecture: domains (levels, bonuses, chat, modals, filter), use cases, repositories, and factories. Vue 3 + TypeScript + Vite, global state on Pinia, UI on Tailwind. Started with Node/Express/SQLite, then consciously removed backend and moved everything to frontend for simplicity and speed."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Gameplay systems",
+            "text": "Made level system (1–5) and lives, achievements for actions, bonuses with unique effects, philosophical questions. There are hidden and 'tough' bubbles, secrets in each year.",
+            "image": ["/assets/cases/bubbleme/bblme_demo1.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Bubble types and experience",
+            "text": "Bubbles reflect technologies and skills: color, size, and XP depend on proficiency level. Philosophical bubbles require choosing an answer: correct gives experience, wrong takes a life. There are 'tough' bubbles (need several clicks) and hidden ones — they can be found with cursor.",
+            "image": ["/assets/cases/bubbleme/bblme_demo2.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Interaction and effects",
+            "text": "Modal queue with priorities, shake effects for UI, micro text movements, particles and fragments. Animations are synchronized with business logic: we wait for effects to complete before next events, so UX feels cinematic.",
+            "image": ["/assets/cases/bubbleme/bblme_demo2.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Physics and animations",
+            "text": "Bubble physics on D3.js: collisions, reaction to cursor. Animations and micro-effects on GSAP: particles, shakes, smooth modals. Visual style — dark neon theme with frosted glass.",
+            "image": ["/assets/cases/bubbleme/bblme.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Performance",
+            "text": "Monitor FPS and automatically reduce number of stars/nodes to maintain stable framerate. When FPS drops, reduce background stars and number of bubbles on screen. Optimized animations, added debounces and lazy initialization.",
+            "image": ["/assets/cases/bubbleme/bblme_demo4.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Chatbot and communications",
+            "text": "Added chatbot and contact widget, there's a separate demo in Telegram. Easily expandable for FAQ or leads.",
+            "image": [
+              "/assets/cases/bubbleme/chatbot.webm",
+              "/assets/cases/bubbleme/chatbot_tg.webm"
+            ]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Filters and categories",
+            "text": "Filtering bubbles by categories/years and quick onboarding. Can quickly find needed skill or experience block.",
+            "image": ["/assets/cases/bubbleme/bbleme_filter.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Content and localization",
+            "text": "Content is in JSON, can be edited without code changes. There's language switching and saving choice in localStorage.",
+            "image": ["/assets/cases/bubbleme/bblme_demo4.webm"]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Onboarding and achievements",
+            "text": "Welcome scenario, hints, achievement system and rewards for exploring resume. Micro-animations support sense of progress.",
+            "image": [
+              "/assets/cases/bubbleme/bblme_ach.png",
+              "/assets/cases/bubbleme/bblme_demo1.webm"
+            ]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Memoirs by levels",
+            "text": "For completing levels, 'memoirs' open — mini-stories about development, architectural decisions, backend abandonment, and project evolution. This enhances narrative and motivation to go further.",
+            "image": ["/assets/cases/bubbleme/bblme_demo3.webm"]
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Result — a resume that immediately shows technical depth and attention to UX. Smooth animations, stable FPS, clean architecture, and readiness for new modes/mini-games. Memoirs by levels reveal development path. Demo available at bubbleme.space."
+          }
+        ]
+      }
+    ]
+  }
+}

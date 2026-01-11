@@ -1,0 +1,45 @@
+{
+  "title": "How I lead frontend",
+  "items": [
+    {
+      "icon": "/assets/icons/howwework/start.svg",
+      "title": "Start",
+      "description": "I dive into the product, metrics, and codebase. Document technical debt and action plan"
+    },
+    {
+      "icon": "/assets/icons/howwework/tasks.svg",
+      "title": "Tasks",
+      "description": "I manage backlog in JIRA/Linear/Notion, prioritize and push statuses myself so the team doesn't get stuck"
+    },
+    {
+      "icon": "/assets/icons/howwework/speed.svg",
+      "title": "Speed",
+      "description": "I build features fast: hotkeys, AI, prepared snippets, and streamlined tooling"
+    },
+    {
+      "icon": "/assets/icons/howwework/transfer.svg",
+      "title": "Handoff",
+      "description": "I hand off code, Storybooks, and documentation: describe edge cases, states, and component APIs"
+    },
+    {
+      "icon": "/assets/icons/howwework/autonomy.svg",
+      "title": "Autonomy",
+      "description": "I set up environments, CI/CD, coordinate with backend and DevOps myself — you don't need to micromanage"
+    },
+    {
+      "icon": "/assets/icons/howwework/outlook.svg",
+      "title": "Outlook",
+      "description": "I've built apps both as solo frontend and in large teams: understand different processes and stacks"
+    },
+    {
+      "icon": "/assets/icons/howwework/system.svg",
+      "title": "Systematic approach",
+      "description": "I build design systems, component libraries, and unified code style to scale without chaos"
+    },
+    {
+      "icon": "/assets/icons/howwework/support.svg",
+      "title": "Support",
+      "description": "I monitor development after release: track metrics, fix bugs, and push to deploy"
+    }
+  ]
+}

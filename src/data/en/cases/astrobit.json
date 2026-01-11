@@ -1,0 +1,132 @@
+{
+  "id": "astrobit",
+  "slug": "astrobit",
+  "hero": {
+    "title": "AstroBit — space analytics for crypto market",
+    "stats": [
+      {
+        "value": "astrobit.online",
+        "description": "platform link",
+        "url": "https://astrobit.online/"
+      },
+      {
+        "value": "Research",
+        "description": "format"
+      },
+      {
+        "value": "React 19 + Cursor AI",
+        "description": "stack"
+      }
+    ]
+  },
+  "meta": {
+    "items": [
+      {
+        "value": "Pet / R&D",
+        "label": "type"
+      },
+      {
+        "value": "Remote",
+        "label": "location"
+      },
+      {
+        "value": "Frontend Lead, researcher",
+        "label": "role"
+      },
+      {
+        "value": "React 19, TypeScript, Vite 6, React Router 7, Zustand, axios, lightweight-charts, Tailwind 3, Node 20, Docker Compose, n8n, Postgres 15, Playwright, Cursor AI",
+        "label": "stack"
+      }
+    ],
+    "workDone": {
+      "label": "what I did",
+      "value": "Designed and built research platform: integrations with Binance API, astronomical/astrological events, correlation analysis, visualizations, infrastructure in Docker + Postgres, e2e checks."
+    }
+  },
+  "overview": {
+    "title": "Project",
+    "sections": [
+      {
+        "text": "AstroBit explores correlations between space events and cryptocurrency movements. The platform combines astronomical data (Moon phases, solar cycles, eclipses, comets, meteor showers, planetary parades) and market quotes in a unified UI."
+      },
+      {
+        "text": "Focus is research: visualize patterns, show cyclicity, provide tools for analysts, traders, astronomers, and astrologers. This is not a predictor, but a tool for identifying connections."
+      },
+      {
+        "text": "Used Cursor AI to speed up development and refactorings: multiple iterations of architecture and code autogeneration led to stable structure where changes are made quickly and without errors."
+      },
+      {
+        "text": "Project went through several fundamental refactorings: initially had own backend and admin in Docker, but they turned out unnecessary — data (astronomical events until end of year) moved to JSON. Plan — automate event collection and make content factory for astrology/crypto: agents collect market and space data, do retro-analysis and test forecasts."
+      },
+      {
+        "text": "This is R&D and entertainment project, not investment advice: goal is to search for correlations between astronomical events and market movements, not promise returns."
+      }
+    ]
+  },
+  "body": {
+    "sections": [
+      {
+        "title": "Problem",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Classic terminals and trading platforms don't show correlations with space events. Need a tool that combines astronomy/astrology with crypto exchange data for hypothesis research, not blind prediction."
+          }
+        ]
+      },
+      {
+        "title": "Task",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Create web platform with live quotes, astronomical events, and analytical visualizations: timelines, filters, event and price synchronization, correlation statistics."
+          }
+        ]
+      },
+      {
+        "title": "Solution",
+        "blocks": [
+          {
+            "type": "subsection",
+            "subtitle": "Data and integrations",
+            "text": "Pull events (350+ for 2022–2027): lunar/solar eclipses, comets, meteor showers, planetary parades. Quotes — via Binance API, historical and live. There are filters by event types and time windows."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Analytics and visualization",
+            "text": "Interactive charts on lightweight-charts, timelines with price and event synchronization, search and filtering. Correlation analysis and pattern display in UI."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "UI: events, filters, search",
+            "text": "Showed in product how to work with space events feed and quotes: quick search, filters by types and time windows, timeline with highlighting selected events.",
+            "image": [
+              "/assets/cases/astrobit/astrobit_events.webm",
+              "/assets/cases/astrobit/astrobit_filters.webm",
+              "/assets/cases/astrobit/astrobit_search.webm"
+            ]
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Stack and architecture",
+            "text": "React 19 + TypeScript + Vite 6, Zustand for store, React Router 7. Tailwind 3 for UI. Infrastructure: Node 20, Docker Compose, Postgres 15 + pgAdmin, n8n for automations. E2E — Playwright. Use Cursor AI to speed up code generation and refactorings."
+          },
+          {
+            "type": "subsection",
+            "subtitle": "Uniqueness and research focus",
+            "text": "First solution combining astronomy and crypto market with scientific approach. Doesn't give 'buy/sell' signals, but helps explore possible connections and cycles."
+          }
+        ]
+      },
+      {
+        "title": "Result",
+        "blocks": [
+          {
+            "type": "text",
+            "text": "Got R&D platform where space events and market movements are displayed together: convenient to view correlations, cycles, and statistics. Architecture designed for feature expansion and adding new data sources."
+          }
+        ]
+      }
+    ]
+  }
+}

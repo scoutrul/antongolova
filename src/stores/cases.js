@@ -12,7 +12,13 @@ import caseNeweraRu from "@/data/ru/cases/newera.json";
 import caseFrontstartRu from "@/data/ru/cases/frontstart.json";
 
 // Импорт полных данных кейсов (английский)
-// leter
+import caseGeovoEn from "@/data/en/cases/geovo.json";
+import caseBubblemeEn from "@/data/en/cases/bubbleme.json";
+import caseAstrobitEn from "@/data/en/cases/astrobit.json";
+import caseFutureboxEn from "@/data/en/cases/futurebox.json";
+import caseZemipravEn from "@/data/en/cases/zemiprav.json";
+import caseNeweraEn from "@/data/en/cases/newera.json";
+import caseFrontstartEn from "@/data/en/cases/frontstart.json";
 
 export const useCasesStore = defineStore("cases", () => {
   const languageStore = useLanguageStore();
@@ -28,7 +34,13 @@ export const useCasesStore = defineStore("cases", () => {
     caseFrontstartRu,
   ]);
   const casesEn = ref([
-    // leter
+    caseGeovoEn,
+    caseBubblemeEn,
+    caseAstrobitEn,
+    caseFutureboxEn,
+    caseZemipravEn,
+    caseNeweraEn,
+    caseFrontstartEn,
   ]);
 
   // Текущие кейсы в зависимости от языка

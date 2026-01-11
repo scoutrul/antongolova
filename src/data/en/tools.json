@@ -1,0 +1,36 @@
+{
+  "title": "Frontend that works for business",
+  "content": {
+    "question": "What kind of developer am I?",
+    "columns": [
+      "I'm responsible for making frontend look and feel like a cohesive product: I live alongside design, analytics, and business, not just in code",
+      "I build features fast and carefully, keep performance, SEO, and DX under control, organize a stable pipeline so the team doesn't get stuck on infrastructure"
+    ]
+  },
+  "items": [
+    {
+      "icon": "/assets/icons/tools/experience-startups.svg",
+      "text": "15+ years in frontend: from MVP in startups to public platforms"
+    },
+    {
+      "icon": "/assets/icons/tools/experience-industries.svg",
+      "text": "Fintech, eCommerce, SaaS, media — different domains, one goal: conversion"
+    },
+    {
+      "icon": "/assets/icons/tools/experience-platforms.svg",
+      "text": "Web, mobile, desktop — I know the constraints of each platform"
+    },
+    {
+      "icon": "/assets/icons/tools/collaboration.svg",
+      "text": "I work shoulder to shoulder with design, backend, and product, keep everyone in the loop"
+    },
+    {
+      "icon": "/assets/icons/tools/self-organization.svg",
+      "text": "I set up the pipeline: CI/CD, code style, tests, documentation — nothing hangs in the air"
+    },
+    {
+      "icon": "/assets/icons/tools/transparency.svg",
+      "text": "I digitize results: speed metrics, retention, impact on business"
+    }
+  ]
+}

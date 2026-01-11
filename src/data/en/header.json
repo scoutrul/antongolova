@@ -1,0 +1,24 @@
+{
+  "slogans": [
+    "Growing together",
+    "Building frontend for metrics",
+    "Making products faster"
+  ],
+  "navigationItems": [
+    {
+      "text": "View cases",
+      "type": "scroll",
+      "target": "section-cases"
+    },
+    {
+      "text": "Download CV",
+      "type": "download",
+      "target": "/assets/cvs/CV – George Vorobyov – EN.pdf"
+    }
+  ],
+  "languages": [
+    { "code": "en", "label": "Русский" },
+    { "code": "ru", "label": "English" }
+  ],
+  "currentLanguage": "en"
+}
