@@ -9,7 +9,7 @@ import caseAstrobitRu from "@/data/ru/cases/astrobit.json";
 import caseFutureboxRu from "@/data/ru/cases/futurebox.json";
 import caseZemipravRu from "@/data/ru/cases/zemiprav.json";
 import caseNeweraRu from "@/data/ru/cases/newera.json";
-import caseMock2026Ru from "@/data/ru/cases/mock2026.json";
+import caseFrontstartRu from "@/data/ru/cases/frontstart.json";
 
 // Импорт полных данных кейсов (английский)
 // leter
@@ -25,7 +25,7 @@ export const useCasesStore = defineStore("cases", () => {
     caseFutureboxRu,
     caseZemipravRu,
     caseNeweraRu,
-    caseMock2026Ru,
+    caseFrontstartRu,
   ]);
   const casesEn = ref([
     // leter

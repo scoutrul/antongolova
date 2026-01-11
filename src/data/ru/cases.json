@@ -52,10 +52,10 @@
     },
     {
       "id": 1,
-      "slug": "mock2026",
-      "title": "Моковый проект 2026",
-      "description": "Первый проект нового года для демонстрации группировки",
-      "image": "/assets/cases/geovo/geovo_loader.webm",
+      "slug": "frontstart",
+      "title": "Frontstart.ru",
+      "description": "Образовательная платформа для фронтенд-разработчиков с базой знаний и AI-ассистентом",
+      "image": "/assets/cases/frontstart/frontstart_logo.png",
       "year": 2026
     }
   ]

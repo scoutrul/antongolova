@@ -52,13 +52,21 @@ defineProps({
   },
 });
 
-// Форматирование текста для поддержки параграфов
+// Форматирование текста для поддержки параграфов и markdown-ссылок
 const formatText = (text) => {
   if (!text) return "";
+  // Заменяем markdown-ссылки [текст](url) на HTML-теги <a>
+  const linkRegex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  const processLinks = (str) => {
+    return str.replace(linkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-800 underline">$1</a>');
+  };
   // Заменяем двойные переносы строки на параграфы
   return text
     .split("\n\n")
-    .map((para) => `<p class="mb-0">${para.replace(/\n/g, "<br>")}</p>`)
+    .map((para) => {
+      const processedPara = processLinks(para);
+      return `<p class="mb-0">${processedPara.replace(/\n/g, "<br>")}</p>`;
+    })
     .join("");
 };
 </script>
