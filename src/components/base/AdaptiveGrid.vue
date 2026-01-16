@@ -1,12 +1,14 @@
 <template>
-  <component
+  <div class="max-w-[calc(100vw-32px)]">
+    <component
     :is="as"
     :class="wrapperClasses"
     v-bind="$attrs"
     :role="computedRole || undefined"
-  >
+    >
     <slot />
   </component>
+</div>
 </template>
 
 <script setup>
