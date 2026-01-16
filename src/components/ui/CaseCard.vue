@@ -90,6 +90,7 @@ const handleClick = () => {
 
 .case-card__media {
   @apply w-full h-full flex items-center justify-center overflow-hidden;
+  max-width: 100%;
 }
 
 .case-card__media-surface {
@@ -99,6 +100,7 @@ const handleClick = () => {
 .case-card__image {
   @apply w-full h-full object-cover;
   @apply transition-transform duration-300 ease-out;
+  max-width: 100%;
 }
 
 .case-card:hover .text-description {

@@ -5,6 +5,7 @@
       v-for="(item, index) in mediaItems"
       :key="index"
       class="media-container bg-white-90 rounded-[16px] overflow-hidden"
+      :class="{ 'mobile-video-container': isMobileVideo(item.src) }"
     >
       <!-- Видео -->
       <video
@@ -13,6 +14,7 @@
         :src="item.src"
         :poster="item.poster"
         class="w-full h-full object-cover bg-white-100"
+        :class="{ 'mobile-video': isMobileVideo(item.src) }"
         muted
         loop
         playsinline
@@ -34,6 +36,7 @@
   <div
     v-else
     class="media-container bg-white-90 rounded-[16px] overflow-hidden"
+    :class="{ 'mobile-video-container': isMobileVideo(currentSrc) }"
   >
     <!-- Видео -->
     <video
@@ -42,6 +45,7 @@
       :src="currentSrc"
       :poster="poster"
       class="w-full h-full object-cover bg-white-100"
+      :class="{ 'mobile-video': isMobileVideo(currentSrc) }"
       muted
       loop
       playsinline
@@ -95,6 +99,12 @@ const isArray = computed(() => Array.isArray(props.src));
 const isVideoFile = (url) => {
   const videoExtensions = [".mp4", ".webm", ".ogg", ".mov"];
   return videoExtensions.some((ext) => url.toLowerCase().endsWith(ext));
+};
+
+// Проверка, является ли видео мобильным (вертикальным)
+const isMobileVideo = (url) => {
+  if (!url) return false;
+  return url.toLowerCase().includes("mobile");
 };
 
 // Для массива: формируем список элементов с учетом mobile версий
@@ -188,5 +198,19 @@ watch(singleVideoRef, (video) => {
 <style scoped>
 .media-container {
   width: 100%;
+}
+
+.mobile-video-container {
+  @apply flex justify-center;
+  width: 100%;
+  max-width: 375px;
+  margin: 0 auto;
+}
+
+.mobile-video {
+  width: auto;
+  max-width: 375px;
+  height: auto;
+  object-fit: contain;
 }
 </style>

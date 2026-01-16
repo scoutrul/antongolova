@@ -31,14 +31,16 @@ const baseWrapperClasses = "min-w-[100vw] md:min-w-[auto]";
 
 const gridClasses = computed(() => {
   const classes = [
-    "w-full flex flex-row",
+    "w-full",
     "overflow-hidden overflow-x-auto",
     "px-4 -mx-4 sm:px-0 sm:mx-0",
     "gap-6 sm:gap-8",
   ];
 
   if (props.isCards) {
-    classes.push("sm:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4");
+    classes.push("flex flex-row sm:grid sm:grid-cols-2 xl:grid-cols-4");
+  } else {
+    classes.push("flex flex-row");
   }
 
   return classes.join(" ");

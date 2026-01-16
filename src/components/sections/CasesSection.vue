@@ -37,10 +37,10 @@
           <li
             v-for="(caseItem, index) in yearGroup"
             :key="`${year}-${index}`"
-            class="list-none"
+            class="list-none max-w-[calc(100vw-32px)] sm:max-w-none"
           >
             <CaseCard
-              class="min-w-[260px] sm:min-w-[auto] box-content sm:box-border min-h-[380px] sm:min-h-[420px] flex-1"
+              class="min-w-[260px] sm:min-w-[auto] max-w-[calc(100vw-32px)] sm:max-w-none box-content sm:box-border min-h-[380px] sm:min-h-[420px] flex-1"
               :title="caseItem.title"
               :description="caseItem.description"
               :image="caseItem.image"

@@ -99,12 +99,14 @@
           {
             "type": "subsection",
             "subtitle": "Content structure and categories",
-            "text": "Organized knowledge base from ~1000 materials in 11 categories: two humanities (computer science, IT hiring) and nine technical (network, tools, layout, JavaScript, TypeScript, architecture, frameworks, optimization, security). Materials split by subsections, grouped, and divided by difficulty level: for junior (basic), middle (intermediate), and senior (advanced) developers. This allows users to choose materials by their level and gradually improve qualifications."
+            "text": "Organized knowledge base from ~1000 materials in 11 categories: two humanities (computer science, IT hiring) and nine technical (network, tools, layout, JavaScript, TypeScript, architecture, frameworks, optimization, security). Materials split by subsections, grouped, and divided by difficulty level: for junior (basic), middle (intermediate), and senior (advanced) developers. This allows users to choose materials by their level and gradually improve qualifications.",
+            "image": "/assets/cases/frontstart/category (1).webm"
           },
           {
             "type": "subsection",
             "subtitle": "Search and filtering system",
-            "text": "Implemented flexible search and filtering system for materials by tags, sections, and specific words. Can enter needed word in search bar or select it in content part with double click — automatically opens search results of all materials matching query. This ensures convenient navigation and quick access to needed information without need to go through many pages."
+            "text": "Implemented flexible search and filtering system for materials by tags, sections, and specific words. Can enter needed word in search bar or select it in content part with double click — automatically opens search results of all materials matching query. This ensures convenient navigation and quick access to needed information without need to go through many pages.",
+            "image": "/assets/cases/frontstart/search (1).webm"
           },
           {
             "type": "subsection",
@@ -124,7 +126,8 @@
           {
             "type": "subsection",
             "subtitle": "Frontend architecture",
-            "text": "Frontend built on React 19 with TypeScript for type safety. Use Zustand for state management, React Router for navigation, Tailwind CSS and PostCSS for styling. Component architecture split into components, core, features, hooks, and utility scripts. Secrets stored in ENV variables. Thought-out adaptive design system for mobile devices and any screens."
+            "text": "Frontend built on React 19 with TypeScript for type safety. Use Zustand for state management, React Router for navigation, Tailwind CSS and PostCSS for styling. Component architecture split into components, core, features, hooks, and utility scripts. Secrets stored in ENV variables. Thought-out adaptive design system for mobile devices and any screens.",
+            "image": "/assets/cases/frontstart/mobile (1).webm"
           },
           {
             "type": "subsection",
