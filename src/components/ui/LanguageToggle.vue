@@ -2,7 +2,7 @@
   <BaseButton
     variant="ghost"
     size="md"
-    class="min-w-[120px] justify-center font-medium"
+    class="min-w-[120px] justify-center font-medium p-0 h-[32px]"
     :class="buttonThemeClasses"
     @click="toggleLanguage"
   >

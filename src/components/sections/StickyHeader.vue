@@ -5,31 +5,29 @@
     class="!fixed top-0 z-50 w-full transition-all duration-200 !py-3 md:!py-6 !overflow-visible"
   >
     <div
-      class="w-full flex items-center justify-between md:justify-start gap-6 md:gap-10"
+      class="w-full flex items-center justify-between md:justify-start gap-2 md:gap-10"
       :class="containerClasses"
     >
-      <div class="flex items-center gap-6 mr-auto">
-        <div class="flex items-center gap-6">
-          <span
-            class="text-p2 whitespace-nowrap cursor-pointer"
-            :class="sloganColorClass"
-            ref="sloganRef"
-            @click="$emit('slogan-click')"
-          >
-            {{ currentSlogan }}
-          </span>
-        </div>
+      <div class="flex items-center mr-auto">
+        <span
+          class="text-p2 whitespace-nowrap cursor-pointer"
+          :class="sloganColorClass"
+          ref="sloganRef"
+          @click="$emit('slogan-click')"
+        >
+          {{ currentSlogan }}
+        </span>
       </div>
 
       <div
-        class="flex items-center gap-6 backdrop-blur-[20px] rounded-lg md:rounded-xl pr-3 md:pr-6 -mr-3 md:-mr-6"
+        class="nav-container flex items-center gap-2 backdrop-blur-[20px] rounded-lg md:rounded-xl px-3 md:px-6 -mr-3 md:-mr-6"
         :class="navContainerClasses"
       >
         <nav
           class="hidden md:flex xl:flex-1 justify-center mr-auto"
           aria-label="Основная навигация"
         >
-          <ul class="flex gap-6">
+          <ul class="flex gap-2">
             <li
               v-for="(item, index) in navigationItems"
               :key="index"
@@ -46,7 +44,7 @@
           </ul>
         </nav>
 
-        <div class="flex items-center gap-6">
+        <div class="flex items-center gap-2">
           <div class="hidden lg:block">
             <LanguageToggle
               :theme="theme"
@@ -72,7 +70,7 @@
           </a>
           <!-- CTA -->
           <ContactButton
-            class="text-secondary"
+            class="text-secondary !px-0"
             @click="$emit('cta-click')"
             :default-text="buttonText"
           />
@@ -248,3 +246,10 @@ const handleNavClick = (event, item) => {
   }
 };
 </script>
+
+<style scoped>
+.nav-container {
+  background: #0000002e;
+  filter: drop-shadow(1px 1px 4px #999);
+}
+</style>
